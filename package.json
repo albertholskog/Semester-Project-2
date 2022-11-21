@@ -50,5 +50,8 @@
     "*.scss": [
       "prettier --write"
     ]
+  },
+  "dependencies": {
+    "bootstrap-icons": "^1.10.2"
   }
 }

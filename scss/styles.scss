@@ -1,3 +1,12 @@
-$primary: #c38;
+@import "font";
+@import "variables";
+@import "carousel";
+@import "button";
+@import "card";
+@import "header";
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+:root {
+   --bs-body-font-family: "Oswald", sans-serif;
+}
