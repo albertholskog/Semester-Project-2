@@ -6,6 +6,13 @@ $theme-colors: (
    "light": #e6e6e6,
    "dark": #000,
 );
+$nav-tabs-link-active-bg: #fdc775;
+
+html,
+body {
+   width: 100%;
+   height: 100%;
+}
 
 // shadow
 $box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.35);

@@ -340,71 +340,151 @@
             </div>
          </div>
       </div>
-      <section class="mt-5">
-         <div class="container-lg bg-light">
-            <div
-               class="d-flex flex-column justify-content-center align-items-center"
-            >
-               <div>
-                  <img
-                     class="mt-5 rounded-circle avatar__img"
-                     src="/image/paul-volkmer-qVotvbsuM_c-unsplash.jpg"
-                     alt=""
-                  />
-               </div>
-               <div class="">
-                  <h4 class="mt-3 text-center">Profil name</h4>
-                  <h4 class="mt-4 text-center">Credit:</h4>
-                  <h5 class="mt-2 text-center">850</h5>
-               </div>
-               <button
-                  type="button"
-                  class="btn btn-secondary btn__profil rounded-circle shadow btn__size--reguler mt-5 mb-5"
-                  data-bs-toggle="modal"
-                  data-bs-target="#ProfilUpdateModal"
+      <section class="container-lg mt-5">
+         <div class="row justify-content-center">
+            <div class="col-12 col-xl-7 bg-light mx-3 p-1 rounded-1 shadow">
+               <div
+                  id="carouselExampleControls"
+                  class="carousel slide h-100"
+                  data-bs-ride="carousel"
                >
-                  Update avatar
-               </button>
-            </div>
-
-            <div
-               class="modal fade"
-               id="ProfilUpdateModal"
-               tabindex="-1"
-               aria-labelledby="modal-title"
-               aria-hidden="true"
-            >
-               <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                     <div class="modal-header">
-                        <h5 class="modal-title" id="modal-title">
-                           Update your profil image
-                        </h5>
-                        <button
-                           class="btn-close"
-                           type="button"
-                           data-bs-dismiss="modal"
-                           aria-label="close"
-                        ></button>
+                  <div class="carousel-inner h-100 rounded-1">
+                     <div class="carousel-item active h-100">
+                        <img
+                           src="/image/paul-volkmer-qVotvbsuM_c-unsplash.jpg"
+                           class="d-block w-100 h-100"
+                           alt="..."
+                        />
                      </div>
-                     <form
-                        class="modal-body d-flex flex-column justify-content-center align-items-center"
-                     >
-                        <label for="profil-update" class="form-label">
-                           Url for your new Profil image:</label
+                     <div class="carousel-item h-100">
+                        <img
+                           src="/image/paul-volkmer-qVotvbsuM_c-unsplash.jpg"
+                           class="d-block w-100 h-100"
+                           alt="..."
+                        />
+                     </div>
+                     <div class="carousel-item h-100">
+                        <img
+                           src="/image/paul-volkmer-qVotvbsuM_c-unsplash.jpg"
+                           class="d-block w-100 h-100"
+                           alt="..."
+                        />
+                     </div>
+                  </div>
+                  <button
+                     class="carousel-control-prev"
+                     type="button"
+                     data-bs-target="#carouselExampleControls"
+                     data-bs-slide="prev"
+                  >
+                     <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
+                     ></span>
+                     <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                     class="carousel-control-next"
+                     type="button"
+                     data-bs-target="#carouselExampleControls"
+                     data-bs-slide="next"
+                  >
+                     <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
+                     ></span>
+                     <span class="visually-hidden">Next</span>
+                  </button>
+               </div>
+            </div>
+            <div
+               class="col-12 col-xl-4 bg-light mx-3 mt-3 mt-xl-0 rounded-1 shadow"
+            >
+               <form class="pt-3 d-flex align-items-center">
+                  <label
+                     for="bidInput"
+                     class="m form-label mb-0 me-2 fw-light fs-3 text-dark"
+                     >Bid:</label
+                  >
+                  <input
+                     type="number"
+                     class="form-control w-auto"
+                     id="bidInput"
+                     aria-describedby="bid"
+                  />
+
+                  <button
+                     type="submit"
+                     class="btn btn-secondary ms-3 shadow btn__card rounded-circle"
+                  >
+                     Bid
+                  </button>
+               </form>
+               <div class="my-3">
+                  <h3 class="fs-4 fw-normal text-dark">
+                     Current Bid: <span>120</span>
+                  </h3>
+                  <h3 class="fs-4 fw-normal text-dark">
+                     Time remaining: <span>1h 48m</span>
+                  </h3>
+               </div>
+               <div class="my-5 mx-1">
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                     <li class="nav-item" role="presentation">
+                        <button
+                           class="nav-link active border-0 rounded-circle text-center"
+                           id="info-tab"
+                           data-bs-toggle="tab"
+                           data-bs-target="#info-tab-pane"
+                           type="button"
+                           role="tab"
+                           aria-controls="info-tab-pane"
+                           aria-selected="true"
                         >
-                        <input
-                           type="text"
-                           class="form-label my-3"
-                           id="profil-update"
-                           placeholder="Url"
-                        /><button
-                           type="submit"
-                           class="btn btn-secondary btn__profil rounded-circle shadow btn__size--reguler mb-5"
-                        >
-                           Update
+                           <i class="bi bi-info-circle text-dark fs-3"></i>
                         </button>
-                     </form>
+                     </li>
+                     <li class="nav-item" role="presentation">
+                        <button
+                           class="nav-link border-0 rounded-circle text-center"
+                           id="biding-history-tab"
+                           data-bs-toggle="tab"
+                           data-bs-target="#biding-history-tab-pane"
+                           type="button"
+                           role="tab"
+                           aria-controls="biding-history-tab-pane"
+                           aria-selected="false"
+                        >
+                           <i class="bi bi-clock-history text-dark fs-3"></i>
+                        </button>
+                     </li>
+                  </ul>
+                  <div class="tab-content mt-3" id="myTabContent">
+                     <div
+                        class="tab-pane fade show active"
+                        id="info-tab-pane"
+                        role="tabpanel"
+                        aria-labelledby="info-tab"
+                        tabindex="0"
+                     >
+                        <p>
+                           Lorem ipsum dolor sit amet consectetur, adipisicing
+                           elit. Numquam perferendis ratione voluptatem, tempora
+                           expedita suscipit minima fugit, quaerat magnam,
+                           obcaecati veritatis rem inventore culpa excepturi
+                           nihil cumque alias doloribus. Aliquid! Tempore
+                           voluptate sed placeat odio maiores explicabo
+                        </p>
+                     </div>
+                     <div
+                        class="tab-pane fade"
+                        id="biding-history-tab-pane"
+                        role="tabpanel"
+                        aria-labelledby="biding-history-tab"
+                        tabindex="0"
+                     >
+                        <p>navn <span>$</span></p>
+                     </div>
                   </div>
                </div>
             </div>

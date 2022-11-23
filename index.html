@@ -19,6 +19,7 @@
          href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Roboto:wght@300;400&display=swap"
          rel="stylesheet"
       />
+      <script src="/src/js/script.js"></script>
       <title>Home page</title>
    </head>
    <body class="bg-primary">
@@ -65,7 +66,9 @@
                      </a>
                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
-                           <a class="dropdown-item text-center" href="#"
+                           <a
+                              class="dropdown-item text-center"
+                              href="/profil.html"
                               >Profile</a
                            >
                         </li>
@@ -90,7 +93,10 @@
                   <li class="nav-item me-4">
                      <a
                         class="nav-link text-center mx-lg-2 mb-4 mb-lg-0 text-success fs-5 fw-light"
-                        href="#"
+                        data-bs-toggle="modal"
+                        data-bs-target="#createlistingModal"
+                        type="button"
+                        href="/createlisting.html"
                         >Create listing</a
                      >
                   </li>
@@ -112,6 +118,88 @@
             </div>
          </div>
       </nav>
+      <!-- modal for create listing -->
+
+      <!-- Modal -->
+      <div
+         class="modal fade"
+         id="createlistingModal"
+         tabindex="-1"
+         aria-labelledby="createlistingModalLabel"
+         aria-hidden="true"
+      >
+         <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="createlistingModalLabel">
+                     Create listing
+                  </h1>
+                  <button
+                     type="button"
+                     class="btn-close"
+                     data-bs-dismiss="modal"
+                     aria-label="Close"
+                  ></button>
+               </div>
+               <form class="modal-body">
+                  <div class="mb-3">
+                     <label for="titleInput" class="form-label">Title</label>
+                     <input type="text" class="form-control" id="titleInput" />
+                  </div>
+                  <div class="mb-3">
+                     <label for="descriptionInput" class="form-label"
+                        >Description</label
+                     >
+                     <textarea
+                        class="form-control"
+                        id="descriptionInput"
+                        rows="3"
+                     ></textarea>
+                  </div>
+                  <div class="mb-3">
+                     <label for="imageUrlInput" class="form-label">Image</label>
+                     <input
+                        type="text"
+                        class="form-control"
+                        id="imageUrlInput1"
+                     />
+                     <input
+                        type="text"
+                        class="form-control my-2"
+                        id="imageUrlInput2"
+                     />
+                     <input
+                        type="text"
+                        class="form-control"
+                        id="imageUrlInput3"
+                     />
+                  </div>
+                  <div class="mb-3">
+                     <label for="imageUrlInput" class="form-label">Data</label>
+                     <input
+                        type="datetime"
+                        class="form-control"
+                        id="imageUrlInput1"
+                     />
+                  </div>
+                  <div class="d-flex justify-content-center align-items-center">
+                     <button
+                        type="submit"
+                        class="btn btn-secondary rounded-circle shadow btn__size--reguler"
+                     >
+                        Submit
+                     </button>
+                  </div>
+               </form>
+               <div class="modal-footer">
+                  <button type="button" class="btn" data-bs-dismiss="modal">
+                     Close
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+
       <!-- modal for login og logout -->
       <div
          class="modal fade"
