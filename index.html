@@ -19,7 +19,8 @@
          href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Roboto:wght@300;400&display=swap"
          rel="stylesheet"
       />
-      <script src="/src/js/script.js"></script>
+      <script src="/src/js/script.js" type="module"></script>
+      <script src="/src/js/index.mjs" type="module"></script>
       <title>Home page</title>
    </head>
    <body class="bg-primary">
@@ -144,13 +145,19 @@
                <form class="modal-body">
                   <div class="mb-3">
                      <label for="titleInput" class="form-label">Title</label>
-                     <input type="text" class="form-control" id="titleInput" />
+                     <input
+                        type="text"
+                        name="name"
+                        class="form-control"
+                        id="titleInput"
+                     />
                   </div>
                   <div class="mb-3">
                      <label for="descriptionInput" class="form-label"
                         >Description</label
                      >
                      <textarea
+                        name="description"
                         class="form-control"
                         id="descriptionInput"
                         rows="3"
@@ -159,6 +166,7 @@
                   <div class="mb-3">
                      <label for="imageUrlInput" class="form-label">Image</label>
                      <input
+                        name="media"
                         type="text"
                         class="form-control"
                         id="imageUrlInput1"
@@ -175,11 +183,12 @@
                      />
                   </div>
                   <div class="mb-3">
-                     <label for="imageUrlInput" class="form-label">Data</label>
+                     <label for="dataInput" class="form-label">Data</label>
                      <input
+                        name="endsAt"
                         type="datetime"
                         class="form-control"
-                        id="imageUrlInput1"
+                        id="dataInput"
                      />
                   </div>
                   <div class="d-flex justify-content-center align-items-center">
@@ -221,12 +230,13 @@
                      aria-label="Close"
                   ></button>
                </div>
-               <form class="modal-body">
+               <form class="modal-body login__form">
                   <div class="mb-3">
                      <label for="loginInputEmail" class="form-label"
                         >Email address</label
                      >
                      <input
+                        name="email"
                         type="email"
                         class="form-control"
                         id="loginInputEmail"
@@ -238,6 +248,7 @@
                         >Password</label
                      >
                      <input
+                        name="password"
                         type="password"
                         class="form-control"
                         id="loginInputPassword"
@@ -285,24 +296,26 @@
                      aria-label="Close"
                   ></button>
                </div>
-               <form class="modal-body">
-                  <div class="mb-3">
-                     <label for="registerInputEmail" class="form-label"
-                        >Email address</label
-                     >
-                     <input
-                        type="email"
-                        class="form-control"
-                        id="registerInputEmail"
-                        aria-describedby="emailHelp"
-                     />
-                  </div>
+               <form class="modal-body register__form">
+                  <!-- <div class="mb-3"> -->
+                  <label for="registerInputEmail" class="form-label"
+                     >Email address</label
+                  >
+                  <input
+                     name="email"
+                     type="email"
+                     class="form-control"
+                     id="registerInputEmail"
+                     aria-describedby="emailHelp"
+                  />
+                  <!-- </div> -->
                   <div class="mb-3">
                      <label for="registerInputName" class="form-label"
                         >Full name</label
                      >
                      <input
-                        type="email"
+                        name="name"
+                        type="text"
                         class="form-control"
                         id="registerInputName"
                         aria-describedby="emailHelp"
@@ -313,6 +326,7 @@
                         >Password</label
                      >
                      <input
+                        name="password"
                         type="password"
                         class="form-control"
                         id="registerInputPassword"
@@ -434,36 +448,7 @@
       </section>
       <section class="mt-5">
          <div class="container-lg">
-            <div class="row">
-               <div class="col-12 col-md-6 col-lg-4 mb-5">
-                  <div class="card position-relative shadow">
-                     <a href="#">
-                        <img
-                           class="card-img-top"
-                           src="/image/paul-volkmer-qVotvbsuM_c-unsplash.jpg"
-                           alt=""
-                        />
-                     </a>
-                     <h4
-                        class="card-text position-absolute top-0 start-0 p-1 bg-light"
-                     >
-                        2h 39m
-                     </h4>
-                     <div class="card-body position-relative">
-                        <a
-                           href="#"
-                           class="btn btn-secondary btn__card position-absolute top-0 start-50 translate-middle rounded-circle shadow"
-                           ><span
-                              class="position-absolute top-50 start-50 translate-middle fw-bold fs-4"
-                              >BID</span
-                           >
-                        </a>
-                        <h3 class="card-title text-center mt-4">Title</h3>
-                        <p class="card-text text-center">269</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
+            <div class="row container__card"></div>
          </div>
       </section>
    </body>

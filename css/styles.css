@@ -3,7 +3,8 @@ p {
   font-family: "Roboto", sans-serif;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
 }
@@ -69,12 +70,12 @@ html, body {
   --bs-secondary: #fdc775;
   --bs-success: #fff;
   --bs-light: #e6e6e6;
-  --bs-dark: #000;
+  --bs-dark: rgb(245, 17, 17);
   --bs-primary-rgb: 93, 96, 100;
   --bs-secondary-rgb: 253, 199, 117;
   --bs-success-rgb: 255, 255, 255;
   --bs-light-rgb: 230, 230, 230;
-  --bs-dark-rgb: 0, 0, 0;
+  --bs-dark-rgb: 245, 17, 17;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
@@ -2891,20 +2892,20 @@ textarea.form-control-lg {
 }
 
 .btn-dark {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #000;
-  --bs-btn-border-color: #000;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #262626;
-  --bs-btn-hover-border-color: #1a1a1a;
-  --bs-btn-focus-shadow-rgb: 38, 38, 38;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #333333;
-  --bs-btn-active-border-color: #1a1a1a;
+  --bs-btn-color: #000;
+  --bs-btn-bg: rgb(245, 17, 17);
+  --bs-btn-border-color: rgb(245, 17, 17);
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #f73535;
+  --bs-btn-hover-border-color: #f62929;
+  --bs-btn-focus-shadow-rgb: 208, 14, 14;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #f74141;
+  --bs-btn-active-border-color: #f62929;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #000;
-  --bs-btn-disabled-border-color: #000;
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: rgb(245, 17, 17);
+  --bs-btn-disabled-border-color: rgb(245, 17, 17);
 }
 
 .btn-outline-primary {
@@ -2976,19 +2977,19 @@ textarea.form-control-lg {
 }
 
 .btn-outline-dark {
-  --bs-btn-color: #000;
-  --bs-btn-border-color: #000;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #000;
-  --bs-btn-hover-border-color: #000;
-  --bs-btn-focus-shadow-rgb: 0, 0, 0;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #000;
-  --bs-btn-active-border-color: #000;
+  --bs-btn-color: rgb(245, 17, 17);
+  --bs-btn-border-color: rgb(245, 17, 17);
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: rgb(245, 17, 17);
+  --bs-btn-hover-border-color: rgb(245, 17, 17);
+  --bs-btn-focus-shadow-rgb: 245, 17, 17;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: rgb(245, 17, 17);
+  --bs-btn-active-border-color: rgb(245, 17, 17);
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-color: rgb(245, 17, 17);
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #000;
+  --bs-btn-disabled-border-color: rgb(245, 17, 17);
   --bs-gradient: none;
 }
 
@@ -4568,12 +4569,12 @@ textarea.form-control-lg {
 }
 
 .alert-dark {
-  --bs-alert-color: black;
-  --bs-alert-bg: #cccccc;
-  --bs-alert-border-color: #b3b3b3;
+  --bs-alert-color: #930a0a;
+  --bs-alert-bg: #fdcfcf;
+  --bs-alert-border-color: #fcb8b8;
 }
 .alert-dark .alert-link {
-  color: black;
+  color: #760808;
 }
 
 @keyframes progress-bar-stripes {
@@ -4925,17 +4926,17 @@ textarea.form-control-lg {
 }
 
 .list-group-item-dark {
-  color: black;
-  background-color: #cccccc;
+  color: #930a0a;
+  background-color: #fdcfcf;
 }
 .list-group-item-dark.list-group-item-action:hover, .list-group-item-dark.list-group-item-action:focus {
-  color: black;
-  background-color: #b8b8b8;
+  color: #930a0a;
+  background-color: #e4baba;
 }
 .list-group-item-dark.list-group-item-action.active {
   color: #fff;
-  background-color: black;
-  border-color: black;
+  background-color: #930a0a;
+  border-color: #930a0a;
 }
 
 .btn-close {
@@ -6474,8 +6475,8 @@ textarea.form-control-lg {
 }
 
 .text-bg-dark {
-  color: #fff !important;
-  background-color: RGBA(0, 0, 0, var(--bs-bg-opacity, 1)) !important;
+  color: #000 !important;
+  background-color: RGBA(245, 17, 17, var(--bs-bg-opacity, 1)) !important;
 }
 
 .link-primary {
@@ -6507,10 +6508,10 @@ textarea.form-control-lg {
 }
 
 .link-dark {
-  color: #000 !important;
+  color: rgb(245, 17, 17) !important;
 }
 .link-dark:hover, .link-dark:focus {
-  color: black !important;
+  color: #f74141 !important;
 }
 
 .ratio {

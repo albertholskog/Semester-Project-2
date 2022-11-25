@@ -7,7 +7,7 @@
       <link rel="stylesheet" href="/css/styles.css" />
       <script
          defer
-         src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"
+         src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       ></script>
       <link
          rel="stylesheet"
@@ -19,10 +19,11 @@
          href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Roboto:wght@300;400&display=swap"
          rel="stylesheet"
       />
-      <script src="/src/js/script.js"></script>
+      <script src="/src/js/script.js" type="module"></script>
+      <script src="/src/js/produt.mjs" type="module"></script>
       <title>Home page</title>
    </head>
-   <body class="bg-primary">
+   <body class="bg-primary d-flex flex-column justify-content-between">
       <nav class="navbar navbar-expand-lg navbar-light">
          <div class="container-fluid">
             <a class="navbar-brand ms-5" href="#"
@@ -144,13 +145,19 @@
                <form class="modal-body">
                   <div class="mb-3">
                      <label for="titleInput" class="form-label">Title</label>
-                     <input type="text" class="form-control" id="titleInput" />
+                     <input
+                        type="text"
+                        name="name"
+                        class="form-control"
+                        id="titleInput"
+                     />
                   </div>
                   <div class="mb-3">
                      <label for="descriptionInput" class="form-label"
                         >Description</label
                      >
                      <textarea
+                        name="description"
                         class="form-control"
                         id="descriptionInput"
                         rows="3"
@@ -159,6 +166,7 @@
                   <div class="mb-3">
                      <label for="imageUrlInput" class="form-label">Image</label>
                      <input
+                        name="media"
                         type="text"
                         class="form-control"
                         id="imageUrlInput1"
@@ -175,11 +183,12 @@
                      />
                   </div>
                   <div class="mb-3">
-                     <label for="imageUrlInput" class="form-label">Data</label>
+                     <label for="dataInput" class="form-label">Data</label>
                      <input
+                        name="endsAt"
                         type="datetime"
                         class="form-control"
-                        id="imageUrlInput1"
+                        id="dataInput"
                      />
                   </div>
                   <div class="d-flex justify-content-center align-items-center">
@@ -221,12 +230,13 @@
                      aria-label="Close"
                   ></button>
                </div>
-               <form class="modal-body">
+               <form class="modal-body login__form">
                   <div class="mb-3">
                      <label for="loginInputEmail" class="form-label"
                         >Email address</label
                      >
                      <input
+                        name="email"
                         type="email"
                         class="form-control"
                         id="loginInputEmail"
@@ -238,6 +248,7 @@
                         >Password</label
                      >
                      <input
+                        name="password"
                         type="password"
                         class="form-control"
                         id="loginInputPassword"
@@ -285,24 +296,26 @@
                      aria-label="Close"
                   ></button>
                </div>
-               <form class="modal-body">
-                  <div class="mb-3">
-                     <label for="registerInputEmail" class="form-label"
-                        >Email address</label
-                     >
-                     <input
-                        type="email"
-                        class="form-control"
-                        id="registerInputEmail"
-                        aria-describedby="emailHelp"
-                     />
-                  </div>
+               <form class="modal-body register__form">
+                  <!-- <div class="mb-3"> -->
+                  <label for="registerInputEmail" class="form-label"
+                     >Email address</label
+                  >
+                  <input
+                     name="email"
+                     type="email"
+                     class="form-control"
+                     id="registerInputEmail"
+                     aria-describedby="emailHelp"
+                  />
+                  <!-- </div> -->
                   <div class="mb-3">
                      <label for="registerInputName" class="form-label"
                         >Full name</label
                      >
                      <input
-                        type="email"
+                        name="name"
+                        type="text"
                         class="form-control"
                         id="registerInputName"
                         aria-describedby="emailHelp"
@@ -313,6 +326,7 @@
                         >Password</label
                      >
                      <input
+                        name="password"
                         type="password"
                         class="form-control"
                         id="registerInputPassword"
@@ -341,7 +355,7 @@
          </div>
       </div>
       <section class="container-lg mt-5">
-         <div class="row justify-content-center">
+         <div class="row justify-content-center container__prod">
             <div class="col-12 col-xl-7 bg-light mx-3 p-1 rounded-1 shadow">
                <div
                   id="carouselExampleControls"
@@ -490,5 +504,6 @@
             </div>
          </div>
       </section>
+      <footer>ad</footer>
    </body>
 </html>
