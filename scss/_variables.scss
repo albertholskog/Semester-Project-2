@@ -4,7 +4,9 @@ $theme-colors: (
    "secondary": #fdc775,
    "success": #fff,
    "light": #e6e6e6,
-   "dark": rgb(245, 17, 17),
+   "dark": rgb(0, 0, 0),
+   "err": rgb(234, 4, 4),
+   "green": rgb(10, 241, 6),
 );
 $nav-tabs-link-active-bg: #fdc775;
 

@@ -1,12 +1,11 @@
 import { getAllListingUrl } from "../url.mjs";
 
 const cardContainer = document.querySelector(".container__card");
-console.log(cardContainer);
 export async function getAllListingApiCall() {
    try {
       const data = await fetch(getAllListingUrl);
       const jsonData = await data.json();
-      console.log(jsonData);
+
       for (let i = 0; i < 9; i++) {
          const element = jsonData[i];
          cardContainer.innerHTML += `  
@@ -15,6 +14,7 @@ export async function getAllListingApiCall() {
                          <a href="/specificprod.html?id=${element.id}">
                             <img class="card-img-top"
                             src="${element.media}"
+                            onerror="this.src = '../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
                             alt="image of the product"/>
                         </a>
                         <h4 class="card-text position-absolute top-0 start-0 p-1 bg-light">                     

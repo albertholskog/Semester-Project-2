@@ -121,7 +121,6 @@
       </nav>
       <!-- modal for create listing -->
 
-      <!-- Modal -->
       <div
          class="modal fade"
          id="createlistingModal"
@@ -240,8 +239,9 @@
                         type="email"
                         class="form-control"
                         id="loginInputEmail"
-                        aria-describedby="emailHelp"
+                        placeholder="example@stud.noroff.no"
                      />
+                     <div id="emailErrLog" class="form-text"></div>
                   </div>
                   <div class="mb-3">
                      <label for="loginInputPassword" class="form-label"
@@ -253,6 +253,7 @@
                         class="form-control"
                         id="loginInputPassword"
                      />
+                     <div id="passwordErrLog" class="form-text"></div>
                   </div>
                   <div class="d-flex justify-content-center modal-footer">
                      <button
@@ -297,18 +298,19 @@
                   ></button>
                </div>
                <form class="modal-body register__form">
-                  <!-- <div class="mb-3"> -->
-                  <label for="registerInputEmail" class="form-label"
-                     >Email address</label
-                  >
-                  <input
-                     name="email"
-                     type="email"
-                     class="form-control"
-                     id="registerInputEmail"
-                     aria-describedby="emailHelp"
-                  />
-                  <!-- </div> -->
+                  <div class="mb-3">
+                     <label for="registerInputEmail" class="form-label"
+                        >Email address</label
+                     >
+                     <input
+                        name="email"
+                        type="email"
+                        class="form-control"
+                        id="registerInputEmail"
+                        placeholder="example@stud.noroff.no"
+                     />
+                     <div id="emailErrReg" class="form-text"></div>
+                  </div>
                   <div class="mb-3">
                      <label for="registerInputName" class="form-label"
                         >Full name</label
@@ -318,8 +320,9 @@
                         type="text"
                         class="form-control"
                         id="registerInputName"
-                        aria-describedby="emailHelp"
+                        placeholder="ola_norman"
                      />
+                     <div id="nameErrReg" class="form-text"></div>
                   </div>
                   <div class="mb-3">
                      <label for="registerInputPassword" class="form-label"
@@ -331,6 +334,7 @@
                         class="form-control"
                         id="registerInputPassword"
                      />
+                     <div id="passwordErrReg" class="form-text"></div>
                   </div>
                   <div class="d-flex justify-content-center modal-footer">
                      <button
