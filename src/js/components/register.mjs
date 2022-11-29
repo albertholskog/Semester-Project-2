@@ -1,5 +1,5 @@
 import { registerUrl } from "../url.mjs";
-console.log(registerUrl);
+
 const registerInputEmail = document.querySelector("#registerInputEmail");
 const emailErr = document.querySelector("#emailErrReg");
 
@@ -16,7 +16,6 @@ export async function registerUser() {
       e.preventDefault();
       const formData = new FormData(registerForm);
       const formDataSeri = Object.fromEntries(formData);
-      console.log(formDataSeri);
 
       if (formDataSeri.name.length > 7) {
          nameErr.innerHTML = "";

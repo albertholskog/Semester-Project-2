@@ -25,7 +25,7 @@ export async function listingsEntryApiCall() {
                                     </div>`;
    }
 
-   if (element.bids.length >= -1) {
+   if (element.bids.length >= 1) {
       const lastBid = element.bids[element.bids.length - 1].amount;
 
       containerBidCurrent.innerHTML += `<h3 class="fs-4 fw-normal text-dark">

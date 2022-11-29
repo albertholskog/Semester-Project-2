@@ -43,7 +43,11 @@ export async function loginApiCall() {
          });
          const jsonData = await data.json();
          const accessToken = jsonData.accessToken;
+         const userName = jsonData.name;
+
+         localStorage.setItem("userName", userName);
          localStorage.setItem("accessToken", accessToken);
+
          console.log(jsonData);
       } catch (error) {
          console.log(error);

@@ -1,17 +1,18 @@
-import { CreateListingUrl } from "../url.mjs";
+import { updateAvatarUrl } from "../url.mjs";
 import { token } from "./localstorage.mjs";
 
-const formCreateListing = document.querySelector(".form__create--listing");
+const formUpdateAvatar = document.querySelector(".form__update--avatar");
+console.log(formUpdateAvatar);
 
-export async function CreateListingApiCall() {
-   formCreateListing.addEventListener("submit", async (e) => {
+export async function updateavatar() {
+   formUpdateAvatar.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const formData = new FormData(formCreateListing);
+      const formData = new FormData(formUpdateAvatar);
       const formDataSeri = Object.fromEntries(formData);
-
+      console.log(formDataSeri);
       try {
-         const data = await fetch(CreateListingUrl, {
-            method: "POST",
+         const data = await fetch(updateAvatarUrl, {
+            method: "PUT",
             headers: {
                "Content-Type": "application/json",
                Authorization: `Bearer ${token}`,

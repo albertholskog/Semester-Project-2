@@ -21,7 +21,6 @@ export async function searchApiCall() {
          },
       });
       searchArray = await response.json();
-      console.log(searchArray);
    } catch (error) {
       console.log("error search api call");
    }
