@@ -4,14 +4,12 @@ const carouselItem = document.querySelector(".carousel-inner");
 const containerBidCurrent = document.querySelector(".container__bid--current");
 const containerBidInfo = document.querySelector(".container__bid--info");
 const containerBidHistory = document.querySelector(".container__bid--history");
-console.log(containerBidHistory);
 
 export async function listingsEntryApiCall() {
    const data = await fetch(listingsEntryUrl);
    const element = await data.json();
    const bidName = element.bids;
 
-   console.log(element.media);
    for (let i = 0; i < element.media.length; i++) {
       const prodImage = element.media[i];
 

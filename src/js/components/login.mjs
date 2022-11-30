@@ -44,7 +44,9 @@ export async function loginApiCall() {
          const jsonData = await data.json();
          const accessToken = jsonData.accessToken;
          const userName = jsonData.name;
+         const credit = jsonData.credits;
 
+         localStorage.setItem("credit", credit);
          localStorage.setItem("userName", userName);
          localStorage.setItem("accessToken", accessToken);
 

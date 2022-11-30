@@ -9,4 +9,6 @@ export const profilUrl = `${baseApi}/api/v1/auction/profiles/${userName}?_listin
 export const updateAvatarUrl = `${baseApi}/api/v1/auction/profiles/${userName}/media`;
 
 export const listingsEntryUrl = `${baseApi}/api/v1/auction/listings/${id}?_bids=true`;
+export const bidUrl = `${baseApi}/api/v1/auction/listings/${id}/bids
+`;
 export const CreateListingUrl = `${baseApi}/api/v1/auction/listings`;

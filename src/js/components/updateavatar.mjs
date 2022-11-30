@@ -10,6 +10,7 @@ export async function updateavatar() {
       const formData = new FormData(formUpdateAvatar);
       const formDataSeri = Object.fromEntries(formData);
       console.log(formDataSeri);
+
       try {
          const data = await fetch(updateAvatarUrl, {
             method: "PUT",
