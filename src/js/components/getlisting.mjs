@@ -1,4 +1,5 @@
 import { getAllListingUrl } from "../url.mjs";
+import { timeformat } from "./timeformat.mjs";
 
 const cardContainer = document.querySelector(".container__card");
 export async function getAllListingApiCall() {
@@ -9,22 +10,34 @@ export async function getAllListingApiCall() {
       for (let i = 0; i < 9; i++) {
          const element = jsonData[i];
 
+         const [
+            daysRemaining,
+            hoursRemaining,
+            minuteRemaining,
+            secondRemaining,
+         ] = timeformat(`${element.endsAt}`);
+
          const lastbidobj = element.bids;
 
          if (element.bids.length >= 1) {
             for (let j = 0; j < lastbidobj.length; j++) {
                const lastbid = lastbidobj[j].amount;
                cardContainer.innerHTML += `  
-                                       <div class="col-12 col-md-6 col-lg-4 mb-5">
-                                       <div class="card position-relative shadow ">
+                                       <div class="col-12 col-md-6 col-lg-4 mb-5 ">
+                                       <div class="card position-relative shadow h-100">
                                        <a href="/specificprod.html?id=${element.id}">
-                                          <img class="card-img-top"
+                                          <img class="card-img-top card__size--img"
                                           src="${element.media[0]}"
                                           onerror="this.src = '../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
                                           alt="image of the product"/>
                                        </a>
-                                       <h4 class="card-text position-absolute top-0 start-0 p-1 bg-light">                     
-                                       ${element.endsAt}
+                                       <h4 class="card-text position-absolute top-0 start-0 p-1 bg-light"> 
+                                       <span>D${daysRemaining} </span>                    
+                                       <span>h${hoursRemaining} </span>                    
+                                       <span>m${minuteRemaining} </span>                    
+                                       <span>s${secondRemaining} </span>                    
+                                                       
+                                      
                                        </h4>
                                        <div class="card-body position-relative">
                                        <a href="#"
@@ -39,16 +52,20 @@ export async function getAllListingApiCall() {
             }
          } else {
             cardContainer.innerHTML += `  
-                                          <div class="col-12 col-md-6 col-lg-4 mb-5">
-                                          <div class="card position-relative shadow ">
+                                          <div class="col-12 col-md-6 col-lg-4 mb-5 ">
+                                          <div class="card position-relative shadow h-100">
                                           <a href="/specificprod.html?id=${element.id}">
-                                             <img class="card-img-top"
+                                             <img class="card-img-top card__size--img"
                                              src="${element.media}"
                                              onerror="this.src = '../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
                                              alt="image of the product"/>
                                           </a>
                                           <h4 class="card-text position-absolute top-0 start-0 p-1 bg-light">                     
-                                          ${element.endsAt}
+                                          <span>D${daysRemaining} </span>                    
+                                          <span>h${hoursRemaining} </span>                    
+                                          <span>m${minuteRemaining} </span>                    
+                                          <span>s${secondRemaining} </span>                    
+                                                          
                                           </h4>
                                           <div class="card-body position-relative">
                                           <a href="#"

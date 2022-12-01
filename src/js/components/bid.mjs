@@ -1,6 +1,6 @@
 import { bidUrl } from "../url.mjs";
 import { token, credit } from "./localstorage.mjs";
-
+import { creditCheckApiCall } from "./creditcheck.mjs";
 const bidInput = document.querySelector("#bid__input");
 const formBid = document.querySelector(".form__bid");
 
@@ -13,6 +13,7 @@ export async function makeBid() {
       const creditNum = parseFloat(credit);
       console.log(typeof amountNum);
       console.log(typeof creditNum);
+
       if (amountNum <= creditNum) {
          try {
             const data = await fetch(bidUrl, {
@@ -31,5 +32,6 @@ export async function makeBid() {
       } else {
          console.log("ikke");
       }
+      creditCheckApiCall();
    });
 }

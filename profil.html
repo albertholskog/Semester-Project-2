@@ -19,14 +19,14 @@
          href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Roboto:wght@300;400&display=swap"
          rel="stylesheet"
       />
-      <!-- <script src="/src/js/script.js" type="module"></script> -->
+      <script src="/src/js/script.js" type="module"></script>
       <script src="/src/js/profil.mjs" type="module"></script>
       <title>Home page</title>
    </head>
    <body class="bg-primary">
       <nav class="navbar navbar-expand-lg navbar-light">
          <div class="container-fluid">
-            <a class="navbar-brand ms-5" href="#"
+            <a class="navbar-brand ms-5" href="/index.html"
                ><h1 class="text-success">
                   BID<span class="text-secondary">:</span>IT
                </h1></a
@@ -35,8 +35,8 @@
                class="navbar-toggler"
                type="button"
                data-bs-toggle="collapse"
-               data-bs-target="#navbarTogglerDemo02"
-               aria-controls="navbarTogglerDemo02"
+               data-bs-target="#navbarToggler"
+               aria-controls="navbarToggler"
                aria-expanded="false"
                aria-label="Toggle navigation"
             >
@@ -44,66 +44,12 @@
             </button>
             <div
                class="collapse navbar-collapse justify-content-end"
-               id="navbarTogglerDemo02"
+               id="navbarToggler"
             >
-               <ul class="navbar-nav">
-                  <li class="nav-item">
-                     <a
-                        class="nav-link text-center text-success mx-lg-2 fs-5 fw-light"
-                        href="/index.html"
-                        >Home</a
-                     >
-                  </li>
-                  <li class="nav-item dropdown">
-                     <a
-                        class="nav-link dropdown-toggle text-center text-success mx-lg-2 fs-5 fw-light"
-                        href="#"
-                        id="navbarDropdown"
-                        role="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                     >
-                        Profile
-                     </a>
-                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li>
-                           <a
-                              class="dropdown-item text-center"
-                              href="/profil.html"
-                              >Profile</a
-                           >
-                        </li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li class="d-flex justify-content-center">
-                           <a
-                              class="btn"
-                              data-bs-toggle="modal"
-                              href="#loginRegisterModalToggle"
-                              role="button"
-                              >Login / Register</a
-                           >
-                        </li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li class="d-flex justify-content-center">
-                           <a class="dropdown-item text-center" href="#"
-                              >Logout</a
-                           >
-                        </li>
-                     </ul>
-                  </li>
-                  <li class="nav-item me-4">
-                     <a
-                        class="nav-link text-center mx-lg-2 mb-4 mb-lg-0 text-success fs-5 fw-light"
-                        data-bs-toggle="modal"
-                        data-bs-target="#createlistingModal"
-                        type="button"
-                        href="/createlisting.html"
-                        >Create listing</a
-                     >
-                  </li>
-               </ul>
+               <div class="container__navbar--link"></div>
                <form class="d-flex position-relative">
                   <input
+                     name="search"
                      class="form-control search__bar"
                      type="search"
                      placeholder="Search"
@@ -121,7 +67,6 @@
       </nav>
       <!-- modal for create listing -->
 
-      <!-- Modal -->
       <div
          class="modal fade"
          id="createlistingModal"
@@ -142,16 +87,22 @@
                      aria-label="Close"
                   ></button>
                </div>
-               <form class="modal-body">
+               <form class="modal-body form__create--listing">
                   <div class="mb-3">
                      <label for="titleInput" class="form-label">Title</label>
-                     <input type="text" class="form-control" id="titleInput" />
+                     <input
+                        type="text"
+                        name="title"
+                        class="form-control"
+                        id="titleInput"
+                     />
                   </div>
                   <div class="mb-3">
                      <label for="descriptionInput" class="form-label"
                         >Description</label
                      >
                      <textarea
+                        name="description"
                         class="form-control"
                         id="descriptionInput"
                         rows="3"
@@ -160,6 +111,7 @@
                   <div class="mb-3">
                      <label for="imageUrlInput" class="form-label">Image</label>
                      <input
+                        name="media"
                         type="text"
                         class="form-control"
                         id="imageUrlInput1"
@@ -176,11 +128,12 @@
                      />
                   </div>
                   <div class="mb-3">
-                     <label for="imageUrlInput" class="form-label">Data</label>
+                     <label for="dataInput" class="form-label">Data</label>
                      <input
+                        name="endsAt"
                         type="datetime"
                         class="form-control"
-                        id="imageUrlInput1"
+                        id="dataInput"
                      />
                   </div>
                   <div class="d-flex justify-content-center align-items-center">
@@ -222,27 +175,31 @@
                      aria-label="Close"
                   ></button>
                </div>
-               <form class="modal-body">
+               <form class="modal-body login__form">
                   <div class="mb-3">
                      <label for="loginInputEmail" class="form-label"
                         >Email address</label
                      >
                      <input
+                        name="email"
                         type="email"
                         class="form-control"
                         id="loginInputEmail"
-                        aria-describedby="emailHelp"
+                        placeholder="example@stud.noroff.no"
                      />
+                     <div id="emailErrLog" class="form-text"></div>
                   </div>
                   <div class="mb-3">
                      <label for="loginInputPassword" class="form-label"
                         >Password</label
                      >
                      <input
+                        name="password"
                         type="password"
                         class="form-control"
                         id="loginInputPassword"
                      />
+                     <div id="passwordErrLog" class="form-text"></div>
                   </div>
                   <div class="d-flex justify-content-center modal-footer">
                      <button
@@ -286,38 +243,44 @@
                      aria-label="Close"
                   ></button>
                </div>
-               <form class="modal-body">
+               <form class="modal-body register__form">
                   <div class="mb-3">
                      <label for="registerInputEmail" class="form-label"
                         >Email address</label
                      >
                      <input
+                        name="email"
                         type="email"
                         class="form-control"
                         id="registerInputEmail"
-                        aria-describedby="emailHelp"
+                        placeholder="example@stud.noroff.no"
                      />
+                     <div id="emailErrReg" class="form-text"></div>
                   </div>
                   <div class="mb-3">
                      <label for="registerInputName" class="form-label"
                         >Full name</label
                      >
                      <input
-                        type="email"
+                        name="name"
+                        type="text"
                         class="form-control"
                         id="registerInputName"
-                        aria-describedby="emailHelp"
+                        placeholder="ola_norman"
                      />
+                     <div id="nameErrReg" class="form-text"></div>
                   </div>
                   <div class="mb-3">
                      <label for="registerInputPassword" class="form-label"
                         >Password</label
                      >
                      <input
+                        name="password"
                         type="password"
                         class="form-control"
                         id="registerInputPassword"
                      />
+                     <div id="passwordErrReg" class="form-text"></div>
                   </div>
                   <div class="d-flex justify-content-center modal-footer">
                      <button
@@ -341,6 +304,7 @@
             </div>
          </div>
       </div>
+
       <section class="mt-5">
          <div class="container-lg bg-light">
             <div
