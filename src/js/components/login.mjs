@@ -53,6 +53,10 @@ export async function loginApiCall() {
          console.log(jsonData);
       } catch (error) {
          console.log(error);
+      } finally {
+         setTimeout(() => {
+            window.location.reload();
+         }, "200");
       }
    });
 }

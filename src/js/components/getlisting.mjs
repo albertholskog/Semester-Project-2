@@ -1,11 +1,12 @@
 import { getAllListingUrl } from "../url.mjs";
 import { timeformat } from "./timeformat.mjs";
+import { apiCall, optionGet } from "./apiCall.mjs";
 
 const cardContainer = document.querySelector(".container__card");
+const spinner = document.querySelector(".spinner-container");
 export async function getAllListingApiCall() {
    try {
-      const data = await fetch(getAllListingUrl);
-      const jsonData = await data.json();
+      const jsonData = await apiCall(getAllListingUrl, optionGet);
 
       for (let i = 0; i < 9; i++) {
          const element = jsonData[i];
@@ -56,7 +57,7 @@ export async function getAllListingApiCall() {
                                           <div class="card position-relative shadow h-100">
                                           <a href="/specificprod.html?id=${element.id}">
                                              <img class="card-img-top card__size--img"
-                                             src="${element.media}"
+                                             src="${element.media[0]}"
                                              onerror="this.src = '../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
                                              alt="image of the product"/>
                                           </a>
@@ -79,6 +80,8 @@ export async function getAllListingApiCall() {
                                           </div>`;
          }
       }
+
+      spinner.innerHTML = "";
    } catch (error) {
       console.log(error);
    }

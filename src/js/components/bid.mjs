@@ -1,6 +1,7 @@
 import { bidUrl } from "../url.mjs";
 import { token, credit } from "./localstorage.mjs";
 import { creditCheckApiCall } from "./creditcheck.mjs";
+import { listingsEntryApiCall } from "./specificprod.mjs";
 const bidInput = document.querySelector("#bid__input");
 const formBid = document.querySelector(".form__bid");
 
@@ -26,12 +27,16 @@ export async function makeBid() {
             });
             const jsonData = await data.json();
             console.log(jsonData);
+            creditCheckApiCall();
          } catch (error) {
             console.log(error);
+         } finally {
+            setTimeout(() => {
+               listingsEntryApiCall();
+            }, "500");
          }
       } else {
          console.log("ikke");
       }
-      creditCheckApiCall();
    });
 }

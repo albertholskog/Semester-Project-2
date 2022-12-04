@@ -55,6 +55,10 @@ export async function registerUser() {
          return jsonData;
       } catch (error) {
          console.log(error);
+      } finally {
+         setTimeout(() => {
+            window.location.reload();
+         }, "200");
       }
    });
 }

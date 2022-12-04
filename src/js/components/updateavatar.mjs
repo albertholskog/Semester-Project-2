@@ -1,5 +1,6 @@
 import { updateAvatarUrl } from "../url.mjs";
 import { token } from "./localstorage.mjs";
+import { apiCallWithForm } from "./apiCall.mjs";
 
 const formUpdateAvatar = document.querySelector(".form__update--avatar");
 console.log(formUpdateAvatar);
@@ -12,15 +13,7 @@ export async function updateavatar() {
       console.log(formDataSeri);
 
       try {
-         const data = await fetch(updateAvatarUrl, {
-            method: "PUT",
-            headers: {
-               "Content-Type": "application/json",
-               Authorization: `Bearer ${token}`,
-            },
-            body: JSON.stringify(formDataSeri),
-         });
-         const jsonData = await data.json();
+         const jsonData = apiCallWithForm(updateAvatarUrl, token, formDataSeri);
          console.log(jsonData);
          return jsonData;
       } catch (error) {

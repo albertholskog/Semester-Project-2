@@ -9,6 +9,5 @@ loginApiCall();
 registerUser();
 CreateListingApiCall();
 searchApiCall();
-
 updatenavbar();
 logout();

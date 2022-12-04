@@ -30,10 +30,10 @@ function showSearchResult(result) {
    const createHtml = result
       .map((element) => {
          return ` <div class="col-12 col-md-6 col-lg-4 mb-5">
-      <div class="card position-relative shadow ">
+      <div class="card position-relative shadow h-100">
       <a href="/specificprod.html?id=${element.id}">
-          <img class="card-img-top"
-          src="${element.media}"
+          <img class="card-img-top card__size--img"
+          src="${element.media[0]}"
           onerror="this.src = '../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
           alt="image of the product"/>
       </a>
