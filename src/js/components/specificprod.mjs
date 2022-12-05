@@ -1,5 +1,6 @@
 import { listingsEntryUrl } from "../url.mjs";
 import { apiCall, optionGet } from "./apiCall.mjs";
+import { timeformat } from "./timeformat.mjs";
 
 export async function listingsEntryApiCall() {
    const carouselItem = document.querySelector(".carousel-inner");
@@ -14,16 +15,24 @@ export async function listingsEntryApiCall() {
 
    try {
       const element = await apiCall(listingsEntryUrl, optionGet);
-      console.log(element);
+      console.log(element.media);
+      const [daysRemaining, hoursRemaining, minuteRemaining, secondRemaining] =
+         timeformat(`${element.endsAt}`);
 
-      // const data = await fetch(listingsEntryUrl);
-      // const element = await data.json();
       const bidName = element.bids;
-      console.log("1");
-
-      for (let i = 0; i < element.media.length; i++) {
-         console.log(element.media);
+      if (element.media.length === 0) {
          carouselItem.innerHTML += `   <div class="carousel-item active h-100">
+                                          <img
+                                             src="../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg"
+                                             onerror="this.src = '../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
+                                             class="d-block w-100 h-100"
+                                             alt="product image for ${element.title}"
+                                          />
+                                       </div>`;
+      } else {
+         for (let i = 0; i < element.media.length; i++) {
+            console.log(element.media);
+            carouselItem.innerHTML += `   <div class="carousel-item active h-100">
                                        <img
                                           src="${element.media[i]}"
                                           onerror="this.src = '../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
@@ -31,6 +40,7 @@ export async function listingsEntryApiCall() {
                                           alt="product image for ${element.title}"
                                        />
                                     </div>`;
+         }
       }
 
       if (element.bids.length >= 1) {
@@ -40,7 +50,11 @@ export async function listingsEntryApiCall() {
                                              Current Bid: <span>${lastBid}</span>
                                          </h3>
                                          <h3 class="fs-4 fw-normal text-dark">
-                                          Time remaining: <span>${element.endsAt}</span>
+                                          Time remaining: 
+                                          <span class="me-1">${daysRemaining}d </span>                    
+                                          <span class="me-1">${hoursRemaining}h </span>                    
+                                          <span class="me-1">${minuteRemaining}m </span>                    
+                                          <span>${secondRemaining}s </span>
                                          </h3>`;
 
          containerBidInfo.innerHTML = `<p>
@@ -59,7 +73,11 @@ export async function listingsEntryApiCall() {
                                                 Current Bid: <span>0</span>
                                           </h3>
                                           <h3 class="fs-4 fw-normal text-dark">
-                                             Time remaining: <span>${element.endsAt}</span>
+                                             Time remaining:     
+                                             <span class="me-1">${daysRemaining}d </span>                    
+                                             <span class="me-1">${hoursRemaining}h </span>                    
+                                             <span class="me-1">${minuteRemaining}m </span>                    
+                                             <span>${secondRemaining}s </span>
                                           </h3>`;
 
          containerBidInfo.innerHTML = `<p>

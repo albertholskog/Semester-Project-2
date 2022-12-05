@@ -1,5 +1,5 @@
 import { registerUrl } from "../url.mjs";
-
+import { apiCallPostNoToken } from "./apiCall.mjs";
 const registerInputEmail = document.querySelector("#registerInputEmail");
 const emailErr = document.querySelector("#emailErrReg");
 
@@ -43,22 +43,15 @@ export async function registerUser() {
       }
 
       try {
-         const data = await fetch(registerUrl, {
-            method: "POST",
-            headers: {
-               "Content-type": "application/json",
-            },
-            body: JSON.stringify(formDataSeri),
-         });
-         const jsonData = await data.json();
+         const jsonData = await apiCallPostNoToken(registerUrl, formDataSeri);
 
-         return jsonData;
+         console.log(jsonData);
       } catch (error) {
          console.log(error);
       } finally {
          setTimeout(() => {
             window.location.reload();
-         }, "200");
+         }, "2200");
       }
    });
 }

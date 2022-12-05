@@ -1,7 +1,7 @@
 import { getAllListingUrl } from "../url.mjs";
 import { timeformat } from "./timeformat.mjs";
 import { apiCall, optionGet } from "./apiCall.mjs";
-
+import { cardInnerHTML } from "../innerhtml/innerhtmlcard.mjs";
 const cardContainer = document.querySelector(".container__card");
 const spinner = document.querySelector(".spinner-container");
 export async function getAllListingApiCall() {
@@ -19,65 +19,29 @@ export async function getAllListingApiCall() {
          ] = timeformat(`${element.endsAt}`);
 
          const lastbidobj = element.bids;
+         console.log(lastbidobj.length);
+         if (lastbidobj.length >= 1) {
+            const lastbid = lastbidobj.pop().amount;
 
-         if (element.bids.length >= 1) {
-            for (let j = 0; j < lastbidobj.length; j++) {
-               const lastbid = lastbidobj[j].amount;
-               cardContainer.innerHTML += `  
-                                       <div class="col-12 col-md-6 col-lg-4 mb-5 ">
-                                       <div class="card position-relative shadow h-100">
-                                       <a href="/specificprod.html?id=${element.id}">
-                                          <img class="card-img-top card__size--img"
-                                          src="${element.media[0]}"
-                                          onerror="this.src = '../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
-                                          alt="image of the product"/>
-                                       </a>
-                                       <h4 class="card-text position-absolute top-0 start-0 p-1 bg-light"> 
-                                       <span>D${daysRemaining} </span>                    
-                                       <span>h${hoursRemaining} </span>                    
-                                       <span>m${minuteRemaining} </span>                    
-                                       <span>s${secondRemaining} </span>                    
-                                                       
-                                      
-                                       </h4>
-                                       <div class="card-body position-relative">
-                                       <a href="#"
-                                       class="btn btn-secondary btn__card position-absolute top-0 start-50 translate-middle rounded-circle shadow"
-                                       ><span class="position-absolute top-50 start-50 translate-middle fw-bold fs-4"> BID</span>
-                                       </a>
-                                       <h3 class="card-title text-center mt-4">${element.title}</h3>
-                                       <p class="card-text text-center">${lastbid}</p>
-                                       </div>
-                                       </div>
-                                       </div>`;
-            }
+            cardInnerHTML(
+               cardContainer,
+               element,
+               daysRemaining,
+               hoursRemaining,
+               minuteRemaining,
+               secondRemaining,
+               lastbid
+            );
          } else {
-            cardContainer.innerHTML += `  
-                                          <div class="col-12 col-md-6 col-lg-4 mb-5 ">
-                                          <div class="card position-relative shadow h-100">
-                                          <a href="/specificprod.html?id=${element.id}">
-                                             <img class="card-img-top card__size--img"
-                                             src="${element.media[0]}"
-                                             onerror="this.src = '../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
-                                             alt="image of the product"/>
-                                          </a>
-                                          <h4 class="card-text position-absolute top-0 start-0 p-1 bg-light">                     
-                                          <span>D${daysRemaining} </span>                    
-                                          <span>h${hoursRemaining} </span>                    
-                                          <span>m${minuteRemaining} </span>                    
-                                          <span>s${secondRemaining} </span>                    
-                                                          
-                                          </h4>
-                                          <div class="card-body position-relative">
-                                          <a href="#"
-                                          class="btn btn-secondary btn__card position-absolute top-0 start-50 translate-middle rounded-circle shadow"
-                                          ><span class="position-absolute top-50 start-50 translate-middle fw-bold fs-4"> BID</span>
-                                          </a>
-                                          <h3 class="card-title text-center mt-4">${element.title}</h3>
-                                          <p class="card-text text-center">0</p>
-                                          </div>
-                                          </div>
-                                          </div>`;
+            cardInnerHTML(
+               cardContainer,
+               element,
+               daysRemaining,
+               hoursRemaining,
+               minuteRemaining,
+               secondRemaining,
+               0
+            );
          }
       }
 
