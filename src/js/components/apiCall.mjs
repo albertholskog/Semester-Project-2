@@ -20,9 +20,9 @@ export const optionGetToken = {
    },
 };
 
-export async function apiCallWithForm(url, verification, form) {
+export async function apiCallWithForm(url, method, verification, form) {
    const data = await fetch(url, {
-      method: "PUT",
+      method: method,
       headers: {
          "Content-Type": "application/json",
          Authorization: `Bearer ${verification}`,
@@ -47,6 +47,7 @@ export async function apiCallWithPost(url, verification, form) {
    console.log(jsonData);
    return jsonData;
 }
+
 export async function apiCallPostNoToken(url, form) {
    const data = await fetch(url, {
       method: "POST",

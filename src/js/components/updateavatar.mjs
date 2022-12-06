@@ -13,7 +13,12 @@ export async function updateavatar() {
       console.log(formDataSeri);
 
       try {
-         const jsonData = apiCallWithForm(updateAvatarUrl, token, formDataSeri);
+         const jsonData = apiCallWithForm(
+            updateAvatarUrl,
+            "PUT",
+            token,
+            formDataSeri
+         );
          console.log(jsonData);
          return jsonData;
       } catch (error) {
