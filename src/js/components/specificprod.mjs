@@ -1,5 +1,5 @@
 import { listingsEntryUrl } from "../url.mjs";
-import { apiCall, optionGet } from "./apiCall.mjs";
+import { apiCall } from "./apiCall.mjs";
 import { timeformat } from "./timeformat.mjs";
 
 export async function listingsEntryApiCall() {
@@ -14,7 +14,7 @@ export async function listingsEntryApiCall() {
    const spinner = document.querySelector(".spinner-container");
 
    try {
-      const element = await apiCall(listingsEntryUrl, optionGet);
+      const element = await apiCall(listingsEntryUrl, "GET");
       console.log(element.media);
       const [daysRemaining, hoursRemaining, minuteRemaining, secondRemaining] =
          timeformat(`${element.endsAt}`);

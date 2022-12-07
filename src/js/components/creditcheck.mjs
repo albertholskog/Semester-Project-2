@@ -1,10 +1,11 @@
 import { creditsUrl } from "../url.mjs";
+import { token } from "./localstorage.mjs";
 
-import { apiCall, optionGetToken } from "./apiCall.mjs";
+import { apiCall } from "./apiCall.mjs";
 
 export async function creditCheckApiCall() {
    try {
-      const jsonData = await apiCall(creditsUrl, optionGetToken);
+      const jsonData = await apiCall(creditsUrl, "GET", token);
 
       const credit = jsonData.credits;
 

@@ -1,18 +1,12 @@
 import { profilUrl } from "../url.mjs";
 import { token } from "./localstorage.mjs";
+import { apiCall } from "./apiCall.mjs";
 
 const profilContainer = document.querySelector(".container__profil");
 
 export async function profilApiCall() {
    try {
-      const data = await fetch(profilUrl, {
-         method: "GET",
-         headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-         },
-      });
-      const element = await data.json();
+      const element = await apiCall(profilUrl, "GET", token);
 
       profilContainer.innerHTML = `<div>
                                     <img

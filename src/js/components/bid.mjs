@@ -1,4 +1,4 @@
-import { apiCallWithPost } from "./apiCall.mjs";
+import { apiCall } from "./apiCall.mjs";
 import { bidUrl } from "../url.mjs";
 import { token, credit } from "./localstorage.mjs";
 import { creditCheckApiCall } from "./creditcheck.mjs";
@@ -17,7 +17,7 @@ export async function makeBid() {
 
       if (amountNum <= creditNum) {
          try {
-            const jsonData = apiCallWithPost(bidUrl, token, bidAmount);
+            const jsonData = apiCall(bidUrl, "POST", token, bidAmount);
 
             creditCheckApiCall();
             return jsonData;

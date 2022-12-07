@@ -1,5 +1,5 @@
 import { registerUrl } from "../url.mjs";
-import { apiCallPostNoToken } from "./apiCall.mjs";
+import { apiCall } from "./apiCall.mjs";
 const registerInputEmail = document.querySelector("#registerInputEmail");
 const emailErr = document.querySelector("#emailErrReg");
 
@@ -43,7 +43,7 @@ export async function registerUser() {
       }
 
       try {
-         const jsonData = await apiCallPostNoToken(registerUrl, formDataSeri);
+         const jsonData = await apiCall(registerUrl, "POST", "", formDataSeri);
 
          console.log(jsonData);
       } catch (error) {

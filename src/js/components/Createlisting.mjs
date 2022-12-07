@@ -1,6 +1,6 @@
+import { apiCall } from "./apiCall.mjs";
 import { createListingUrl } from "../url.mjs";
 import { token } from "./localstorage.mjs";
-import { apiCallWithPost } from "./apiCall.mjs";
 
 export async function createListingApiCall() {
    const formCreateListing = document.querySelector(".form__create--listing");
@@ -12,7 +12,8 @@ export async function createListingApiCall() {
       const description = formData.get("description");
       const media = formData.getAll("media");
       const endsAt = formData.get("endsAt");
-
+      const timeString = new Date(endsAt).toISOString();
+      console.log(timeString);
       console.log(title);
       console.log(description);
       console.log(media);
@@ -27,21 +28,20 @@ export async function createListingApiCall() {
          title: title,
          description: description,
          media: filterMedia,
-         endsAt: endsAt,
+         endsAt: timeString,
       };
       console.log(listingObj);
 
       try {
-         const jsonData = apiCallWithPost(createListingUrl, token, listingObj);
+         const jsonData = apiCall(createListingUrl, "POST", token, listingObj);
          console.log(jsonData);
          return jsonData;
       } catch (error) {
          console.log(error);
+      } finally {
+         setTimeout(() => {
+            window.location.reload();
+         }, "200");
       }
-      // finally {
-      //    setTimeout(() => {
-      //       window.location.reload();
-      //    }, "200");
-      // }
    });
 }

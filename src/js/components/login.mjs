@@ -1,6 +1,6 @@
 import { loginUrl } from "../url.mjs";
 import { emailVali } from "./register.mjs";
-import { apiCallPostNoToken } from "./apiCall.mjs";
+import { apiCall } from "./apiCall.mjs";
 
 const loginInputEmail = document.querySelector("#loginInputEmail");
 const emailErrLog = document.querySelector("#emailErrLog");
@@ -35,7 +35,7 @@ export async function loginApiCall() {
       }
 
       try {
-         const jsonData = await apiCallPostNoToken(loginUrl, formDataSeri);
+         const jsonData = await apiCall(loginUrl, "POST", "", formDataSeri);
 
          const accessToken = jsonData.accessToken;
          const userName = jsonData.name;

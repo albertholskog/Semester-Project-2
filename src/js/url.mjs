@@ -3,7 +3,7 @@ import { userName } from "./components/localstorage.mjs";
 const baseApi = "https://api.noroff.dev";
 export const registerUrl = `${baseApi}/api/v1/auction/auth/register`;
 export const loginUrl = `${baseApi}/api/v1/auction/auth/login`;
-export const getAllListingUrl = `${baseApi}/api/v1/auction/listings?_bids=true&sort=created&sortOrder=desc`;
+export const getAllListingUrl = `${baseApi}/api/v1/auction/listings?sort=created&sortOrder=desc&_active=true&_seller=true&_bids=true`;
 
 export const profilUrl = `${baseApi}/api/v1/auction/profiles/${userName}?_listings=true`;
 export const updateAvatarUrl = `${baseApi}/api/v1/auction/profiles/${userName}/media`;
