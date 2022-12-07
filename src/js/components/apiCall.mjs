@@ -9,7 +9,7 @@ export async function apiCall(url, method, verification, form) {
          body: JSON.stringify(form),
       });
       const jsonData = await data.json();
-      console.log(jsonData);
+
       return jsonData;
    } catch (error) {
       console.log(error);

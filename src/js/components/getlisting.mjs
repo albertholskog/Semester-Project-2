@@ -17,7 +17,7 @@ export async function getAllListingApiCall() {
             minuteRemaining,
             secondRemaining,
          ] = timeformat(`${element.endsAt}`);
-         console.log(daysRemaining);
+
          const lastbidobj = element.bids;
 
          if (lastbidobj.length >= 1) {
