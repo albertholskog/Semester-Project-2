@@ -25,11 +25,8 @@ export async function searchApiCall() {
 
       for (let i = 0; i < searchArray.length; i++) {
          const element = searchArray[i];
-         console.log(element.bids);
-         const lastbid = element.bids;
-         console.log(lastbid);
+         console.log(element);
       }
-      console.log(searchArray);
    } catch (error) {
       console.log("error search api call");
    }
