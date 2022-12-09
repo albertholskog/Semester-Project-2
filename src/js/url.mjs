@@ -14,3 +14,5 @@ export const bidUrl = `${baseApi}/api/v1/auction/listings/${id}/bids`;
 
 export const createListingUrl = `${baseApi}/api/v1/auction/listings`;
 export const creditsUrl = `${baseApi}/api/v1/auction/profiles/${userName}/credits`;
+
+export const deleteEntryUrl = `${baseApi}/api/v1/auction/listings/<id>`;

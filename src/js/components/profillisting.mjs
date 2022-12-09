@@ -10,7 +10,6 @@ export async function myListingsApiCall() {
          ".container__yours--listings"
       );
       const jsonData = await apiCall(profillistingsUrl, "GET", token);
-      console.log(jsonData);
 
       for (let i = 0; i < jsonData.length; i++) {
          const element = jsonData[i];
@@ -20,10 +19,6 @@ export async function myListingsApiCall() {
             minuteRemaining,
             secondRemaining,
          ] = timeformat(`${element.endsAt}`);
-
-         console.log(element.title);
-         console.log(element.description);
-         console.log(element.media);
 
          myCardInnerHTML(
             containerMyListing,

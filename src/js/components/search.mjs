@@ -22,11 +22,6 @@ export async function searchApiCall() {
          },
       });
       searchArray = await response.json();
-
-      for (let i = 0; i < searchArray.length; i++) {
-         const element = searchArray[i];
-         console.log(element);
-      }
    } catch (error) {
       console.log("error search api call");
    }

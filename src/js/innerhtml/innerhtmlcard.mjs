@@ -40,13 +40,11 @@ export function myCardInnerHTML(container, element, day, hour, min, sec) {
                                                 <span class="me-1 text-success fw-light">${hour}h </span>                    
                                                 <span class="me-1 text-success fw-light">${min}m </span>                    
                                                 <span class="text-success fw-light">${sec}s </span>                    
-
                                                 </h4>
-                                            <div class="card-body position-relative bg-light rounded-bottom ">
-                                                <a href="/specificprod.html?id=${element.id}"
-                                                class="btn btn-secondary btn__card position-absolute top-0 start-50 translate-middle rounded-circle shadow"
-                                                ><span class="position-absolute top-50 start-50 translate-middle fs-4 btn__delete">Delete</span>
-                                                </a>
+                                            <div class="card-body position-relative bg-light rounded-bottom test ">
+                                                <div class="btn btn-secondary btn__card position-absolute top-0 start-50 translate-middle rounded-circle shadow ">
+                                                <span class="position-absolute top-50 start-50 translate-middle fs-4 btn__delete">Delete</span>
+                                                </div>
                                                 <h3 class="card-title text-center mt-4 text-success fw-light">${element.title}</h3>
                                             </div>
                                         </div>
