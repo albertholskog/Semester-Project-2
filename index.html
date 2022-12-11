@@ -83,7 +83,7 @@
                </div>
                <form class="modal-body form__create--listing">
                   <div class="mb-3">
-                     <label for="titleInput" class="form-label">Title</label>
+                     <label for="titleInput" class="form-label">Title*</label>
                      <input
                         type="text"
                         name="title"
@@ -105,18 +105,21 @@
                   <div class="mb-3">
                      <label for="imageUrlInput" class="form-label">Image</label>
                      <input
+                        placeholder="https://example.com.jpg"
                         name="media"
                         type="text"
                         class="form-control"
                         id="imageUrlInput1"
                      />
                      <input
+                        placeholder="https://example.com.jpg"
                         name="media"
                         type="text"
                         class="form-control my-2"
                         id="imageUrlInput2"
                      />
                      <input
+                        placeholder="https://example.com.jpg"
                         name="media"
                         type="text"
                         class="form-control"
@@ -124,7 +127,7 @@
                      />
                   </div>
                   <div class="mb-3">
-                     <label for="dataInput" class="form-label">Data</label>
+                     <label for="dataInput" class="form-label">Date*</label>
                      <input
                         name="endsAt"
                         type="datetime-local"
@@ -338,7 +341,11 @@
       </section>
       <section class="mt-5">
          <div class="text-center spinner-container">
-            <div class="spinner-border" role="status" id="spinner">
+            <div
+               class="spinner-border text-secondary"
+               role="status"
+               id="spinner"
+            >
                <span class="visually-hidden">Loading...</span>
             </div>
          </div>

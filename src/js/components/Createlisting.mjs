@@ -4,6 +4,8 @@ import { token } from "./localstorage.mjs";
 
 export async function createListingApiCall() {
    const formCreateListing = document.querySelector(".form__create--listing");
+   const titleInput = document.querySelector("#titleInput");
+   const dateInput = document.querySelector("#dataInput");
    formCreateListing.addEventListener("submit", async (e) => {
       e.preventDefault();
 
@@ -33,15 +35,28 @@ export async function createListingApiCall() {
       console.log(listingObj);
 
       try {
-         const jsonData = apiCall(createListingUrl, "POST", token, listingObj);
-         console.log(jsonData);
-         return jsonData;
+         if (!title && timeString) {
+            console.log("sant");
+            titleInput.classList.add("border-err");
+            dateInput.classList.add("border-err");
+         } else {
+            // fiks dette
+            const jsonData = apiCall(
+               createListingUrl,
+               "POST",
+               token,
+               listingObj
+            );
+            console.log(jsonData);
+            return jsonData;
+         }
       } catch (error) {
          console.log(error);
-      } finally {
-         setTimeout(() => {
-            window.location.reload();
-         }, "200");
       }
+      // finally {
+      //    setTimeout(() => {
+      //       window.location.reload();
+      //    }, "200");
+      // }
    });
 }

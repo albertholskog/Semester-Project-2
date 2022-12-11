@@ -1,8 +1,9 @@
 import { getAllListingUrl } from "../url.mjs";
 import { timeformat } from "./timeformat.mjs";
 import { apiCall } from "./apiCall.mjs";
+import { displayErrorMessage } from "../innerhtml/displayError.mjs";
 const searchBar = document.querySelector(".search__bar");
-const container = document.querySelector(".container__card");
+const containerSearch = document.querySelector(".container__card");
 
 let searchArray = [];
 
@@ -17,9 +18,11 @@ searchBar.addEventListener("keyup", (e) => {
 export async function searchApiCall() {
    try {
       searchArray = await apiCall(getAllListingUrl, "GET");
-      // console.log(searchArray);
    } catch (error) {
       console.log("error search api call");
+      containerSearch.innerHTML = displayErrorMessage(
+         "Search result error occurred"
+      );
    }
 }
 
@@ -33,7 +36,6 @@ function showSearchResult(result) {
             secondRemaining,
          ] = timeformat(`${element.endsAt}`);
 
-         console.log(element.bids);
          if (element.bids.length === 0) {
             return ` <div class="col-12 col-md-6 col-lg-4 mb-5">
                      <div class="card position-relative shadow h-100">
@@ -91,5 +93,5 @@ function showSearchResult(result) {
       })
       .join("");
 
-   container.innerHTML = createHtml;
+   containerSearch.innerHTML = createHtml;
 }

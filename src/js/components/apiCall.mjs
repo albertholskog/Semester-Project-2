@@ -8,7 +8,7 @@ export async function apiCall(url, method, verification, form) {
          },
          body: JSON.stringify(form),
       });
-      console.log(data);
+
       const jsonData = await data.json();
       if (data.ok) {
          return jsonData;

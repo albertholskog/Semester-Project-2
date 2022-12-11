@@ -105,19 +105,19 @@
                   <div class="mb-3">
                      <label for="imageUrlInput" class="form-label">Image</label>
                      <input
-                        name="media-1"
+                        name="media"
                         type="text"
                         class="form-control"
                         id="imageUrlInput1"
                      />
                      <input
-                        name="media-2"
+                        name="media"
                         type="text"
                         class="form-control my-2"
                         id="imageUrlInput2"
                      />
                      <input
-                        name="media-3"
+                        name="media"
                         type="text"
                         class="form-control"
                         id="imageUrlInput3"
@@ -346,7 +346,16 @@
       </div>
       <section class="mt-5">
          <div class="container-lg bg-light py-5 rounded-1 shadow">
-            <div class="row">
+            <div class="row container__error--display">
+               <div class="text-center spinner-container">
+                  <div
+                     class="spinner-border text-secondary"
+                     role="status"
+                     id="spinner"
+                  >
+                     <span class="visually-hidden">Loading...</span>
+                  </div>
+               </div>
                <div class="col-12 col-md-6 container__avatar text-center"></div>
                <div class="col-12 col-md-6 align-self-center">
                   <div class="container__profil--info"></div>
@@ -369,6 +378,15 @@
             <div class="row">
                <div class="col-12 mb-2">
                   <h2 class="text-success">Your listings</h2>
+                  <div class="text-center spinner-container--mylisting">
+                     <div
+                        class="spinner-border text-secondary"
+                        role="status"
+                        id="spinner"
+                     >
+                        <span class="visually-hidden">Loading...</span>
+                     </div>
+                  </div>
                </div>
             </div>
             <div class="row container__yours--listings"></div>

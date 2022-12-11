@@ -2,6 +2,7 @@ import { getAllListingUrl } from "../url.mjs";
 import { timeformat } from "./timeformat.mjs";
 import { apiCall } from "./apiCall.mjs";
 import { cardInnerHTML } from "../innerhtml/innerhtmlcard.mjs";
+import { displayErrorMessage } from "../innerhtml/displayError.mjs";
 const cardContainer = document.querySelector(".container__card");
 const spinner = document.querySelector(".spinner-container");
 export async function getAllListingApiCall() {
@@ -48,5 +49,6 @@ export async function getAllListingApiCall() {
       spinner.innerHTML = "";
    } catch (error) {
       console.log(error);
+      cardContainer.innerHTML = displayErrorMessage("Api faild to get listing");
    }
 }
