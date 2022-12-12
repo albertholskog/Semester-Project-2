@@ -25,8 +25,8 @@
    </head>
    <body class="bg-primary">
       <nav class="navbar navbar-expand-lg navbar-light">
-         <div class="container-fluid">
-            <a class="navbar-brand ms-5" href="/index.html"
+         <div class="container-lg">
+            <a class="navbar-brand" href="/index.html"
                ><h1 class="text-success">
                   BID<span class="text-secondary">:</span>IT
                </h1></a
@@ -47,7 +47,7 @@
                id="navbarToggler"
             >
                <div class="container__navbar--link"></div>
-               <form class="d-flex position-relative">
+               <!-- <form class=" ">
                   <input
                      name="search"
                      class="form-control search__bar"
@@ -55,7 +55,7 @@
                      placeholder="Search"
                      aria-label="Search"
                   />
-               </form>
+               </form> -->
             </div>
          </div>
       </nav>
@@ -83,8 +83,9 @@
                </div>
                <form class="modal-body form__create--listing">
                   <div class="mb-3">
-                     <label for="titleInput" class="form-label">Title</label>
+                     <label for="titleInput" class="form-label">Title*</label>
                      <input
+                        required
                         type="text"
                         name="title"
                         class="form-control"
@@ -105,18 +106,21 @@
                   <div class="mb-3">
                      <label for="imageUrlInput" class="form-label">Image</label>
                      <input
+                        placeholder="https://example.com.jpg"
                         name="media"
                         type="text"
                         class="form-control"
                         id="imageUrlInput1"
                      />
                      <input
+                        placeholder="https://example.com.jpg"
                         name="media"
                         type="text"
                         class="form-control my-2"
                         id="imageUrlInput2"
                      />
                      <input
+                        placeholder="https://example.com.jpg"
                         name="media"
                         type="text"
                         class="form-control"
@@ -124,8 +128,9 @@
                      />
                   </div>
                   <div class="mb-3">
-                     <label for="dataInput" class="form-label">Data</label>
+                     <label for="dataInput" class="form-label">Date*</label>
                      <input
+                        required
                         name="endsAt"
                         type="datetime-local"
                         class="form-control"
@@ -206,6 +211,9 @@
                      </button>
                   </div>
                </form>
+               <div
+                  class="modal-footer justify-content-center align-items-center error__login"
+               ></div>
                <div>
                   <button
                      class="btn mb-1"
@@ -300,7 +308,6 @@
             </div>
          </div>
       </div>
-
       <!-- update avatar module -->
       <div
          class="modal fade"
