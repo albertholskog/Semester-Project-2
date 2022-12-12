@@ -31,7 +31,7 @@ export function updatenavbar() {
                                                 >My Profile</a
                                             >
                                             </li>
-                                            <li><hr class="dropdown-divider" /></li>
+                                            <li><hr class="dropdown-divider"/></li>
                                             <li class="d-flex justify-content-center">
                                             <a class="dropdown-item text-center logout__btn" href="#"
                                                 >Logout</a
@@ -39,9 +39,9 @@ export function updatenavbar() {
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="nav-item me-4">
+                                    <li class="nav-item">
                                         <a
-                                            class="nav-link text-center mx-lg-2 mb-4 mb-lg-0 text-success fs-5 fw-light "
+                                            class="nav-link text-center  mb-4 mb-lg-0 text-success fs-5 fw-light "
                                             data-bs-toggle="modal"
                                             data-bs-target="#createlistingModal"
                                             type="button"

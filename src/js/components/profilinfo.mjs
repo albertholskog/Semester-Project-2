@@ -19,9 +19,9 @@ export async function profilApiCall() {
                                        onerror="this.src = '../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
                                        alt=""
                                     />`;
-      containerProfilInfo.innerHTML += `<h4 class="mt-3 text-center text-success">${element.name}</h4>
-                                       <h4 class="mt-4 text-center text-success">Credit:</h4>
-                                       <h5 class="mt-2 text-center text-success">${element.credits}</h5>`;
+      containerProfilInfo.innerHTML += `<h4 class="mt-3 text-center text-success fw-light">${element.name}</h4>
+                                       <h4 class="mt-4 text-center text-success fw-light">Credit:</h4>
+                                       <h5 class="mt-2 text-center text-success fw-light">${element.credits}</h5>`;
 
       spinner.innerHTML = "";
    } catch (error) {

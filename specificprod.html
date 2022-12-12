@@ -309,15 +309,15 @@
          </div>
       </div>
 
-      <section class="container-lg mt-5">
+      <section class="container-md mt-5">
          <div class="text-center spinner-container">
             <div class="spinner-border" role="status" id="spinner">
                <span class="visually-hidden">Loading...</span>
             </div>
          </div>
-         <div class="row justify-content-center">
+         <div class="row justify-content-between">
             <div
-               class="col-12 col-xl-7 bg-light mx-3 p-1 rounded-1 shadow prod__carousel"
+               class="col-12 col-xl-7 bg-light p-1 rounded-1 shadow prod__carousel"
             >
                <div
                   id="carouselExampleControls"
@@ -352,15 +352,18 @@
                </div>
             </div>
             <div
-               class="col-12 col-xl-4 bg-light mx-3 mt-3 mt-xl-0 rounded-1 shadow prod__info"
+               class="col-12 col-xl-4 bg-light mt-3 mt-xl-0 rounded-1 shadow prod__info"
             >
-               <form class="pt-3 d-flex align-items-center form__bid">
+               <form
+                  class="pt-3 d-flex align-items-center flex-column form__bid"
+               >
                   <label
                      for="bidInput"
-                     class="m form-label mb-0 me-2 fw-light fs-3 text-dark"
-                     >Bid:</label
+                     class="m form-label fw-light fs-3 text-success"
+                     >Enter your bid</label
                   >
                   <input
+                     placeholder="Your bid"
                      name="amount"
                      type="number"
                      class="form-control w-auto"
@@ -370,7 +373,7 @@
 
                   <button
                      type="submit"
-                     class="btn btn-secondary ms-3 shadow btn__card rounded-circle"
+                     class="btn btn-secondary shadow btn__card rounded-circle mt-2"
                   >
                      Bid
                   </button>

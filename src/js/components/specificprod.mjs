@@ -46,18 +46,24 @@ export async function listingsEntryApiCall() {
       if (element.bids.length >= 1) {
          const lastBid = element.bids[element.bids.length - 1].amount;
          console.log("3");
-         containerBidCurrent.innerHTML = `<h3 class="fs-4 fw-normal text-dark">
-                                             Current Bid: <span>${lastBid}</span>
-                                         </h3>
-                                         <h3 class="fs-4 fw-normal text-dark">
-                                          Time remaining: 
-                                          <span class="me-1">${daysRemaining}d </span>                    
-                                          <span class="me-1">${hoursRemaining}h </span>                    
-                                          <span class="me-1">${minuteRemaining}m </span>                    
-                                          <span>${secondRemaining}s </span>
-                                         </h3>`;
+         containerBidCurrent.innerHTML = `
+                                          <h3 class="fs-4 text-success fw-light text-center">
+                                                Current Bid: 
+                                          </h3>
+                                          <h3 class="fs-4 text-success fw-light text-center">
+                                                   ${lastBid}
+                                          </h3>
+                                          <h3 class="fs-4 text-success fw-light text-center mt-3 ">
+                                                Time remaining:
+                                          </h3>
+                                          <h3 class="fs-4 text-success fw-light text-center">
+                                                <span class="me-1 text-success fw-light">${daysRemaining}d </span>                    
+                                                <span class="me-1 text-success fw-light">${hoursRemaining}h </span>                    
+                                                <span class="me-1 text-success fw-light">${minuteRemaining}m </span>                    
+                                                <span class="text-success fw-light" >${secondRemaining}s </span>
+                                          </h3>`;
 
-         containerBidInfo.innerHTML = `<p>
+         containerBidInfo.innerHTML = `<p class="text-success fw-light m-1">
                                           ${element.title}<br />
                                           ${element.description}
                                      </p>`;
@@ -65,27 +71,32 @@ export async function listingsEntryApiCall() {
          for (let i = 0; i < bidName.length; i++) {
             const bidUser = bidName[i];
             console.log("4");
-            containerBidHistory.innerHTML += ` <p>${bidUser.bidderName}<span class="ms-5">${bidUser.amount}</span></p>`;
+            containerBidHistory.innerHTML += ` <p class="text-success fw-light">${bidUser.bidderName}<span class="ms-5">${bidUser.amount}</span></p>`;
          }
       } else {
          console.log("5");
-         containerBidCurrent.innerHTML = `<h3 class="fs-4 fw-normal text-dark">
-                                                Current Bid: <span>0</span>
+         containerBidCurrent.innerHTML = `<h3 class="fs-4 text-success fw-light text-center">
+                                                   Current Bid: 
                                           </h3>
-                                          <h3 class="fs-4 fw-normal text-dark">
-                                             Time remaining:     
-                                             <span class="me-1">${daysRemaining}d </span>                    
-                                             <span class="me-1">${hoursRemaining}h </span>                    
-                                             <span class="me-1">${minuteRemaining}m </span>                    
-                                             <span>${secondRemaining}s </span>
+                                           <h3 class="fs-4 text-success fw-light text-center">
+                                                   0
+                                          </h3>
+                                          <h3 class="fs-4 text-success fw-light text-center mt-3 ">
+                                                Time remaining:
+                                          </h3>
+                                          <h3 class="fs-4 text-success fw-light text-center">
+                                             <span class="me-1 text-success fw-light">${daysRemaining}d </span>                    
+                                             <span class="me-1 text-success fw-light">${hoursRemaining}h </span>                    
+                                             <span class="me-1 text-success fw-light">${minuteRemaining}m </span>                    
+                                             <span class="text-success fw-light" >${secondRemaining}s </span>
                                           </h3>`;
 
-         containerBidInfo.innerHTML = `<p>
+         containerBidInfo.innerHTML = `<p class="text-success m-1">
                                        ${element.title}<br />
                                        ${element.description}
                                      </p>`;
 
-         containerBidHistory.innerHTML = ` <p>
+         containerBidHistory.innerHTML = ` <p class="text-success">
                                          No bidding history
                                        </p>`;
       }
