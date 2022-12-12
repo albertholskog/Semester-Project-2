@@ -85,6 +85,7 @@
                   <div class="mb-3">
                      <label for="titleInput" class="form-label">Title*</label>
                      <input
+                        required
                         type="text"
                         name="title"
                         class="form-control"
@@ -129,6 +130,7 @@
                   <div class="mb-3">
                      <label for="dataInput" class="form-label">Date*</label>
                      <input
+                        required
                         name="endsAt"
                         type="datetime-local"
                         class="form-control"
@@ -209,6 +211,9 @@
                      </button>
                   </div>
                </form>
+               <div
+                  class="modal-footer justify-content-center align-items-center error__login"
+               ></div>
                <div>
                   <button
                      class="btn mb-1"
@@ -309,7 +314,9 @@
          <div class="container-lg">
             <div class="row justify-content-center align-items-center">
                <div class="col-12 col-sm-6">
-                  <h2 class="mb-4 text-success">Welcome to Bid:it</h2>
+                  <h2 class="mb-4 text-success text-center text-sm-start">
+                     Welcome to Bid:it
+                  </h2>
                   <p class="text-success">
                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
                      Quidem reprehenderit temporibus nesciunt, nihil corporis
@@ -331,15 +338,12 @@
       <!-- New Products -->
       <section class="mt-5">
          <div class="container-lg">
-            <div class="d-flex justify-content-between">
+            <div class="text-center text-sm-start">
                <h2 class="text-success fw-light">New products</h2>
-               <button class="btn btn-round btn-lg bg-secondary">
-                  See more
-               </button>
             </div>
          </div>
       </section>
-      <section class="mt-5">
+      <section class="my-5 pb-5">
          <div class="text-center spinner-container">
             <div
                class="spinner-border text-secondary"
@@ -352,6 +356,9 @@
          <div class="container-lg">
             <div class="row container__card"></div>
          </div>
+         <button class="btn btn-round btn-lg bg-secondary mx-auto d-block">
+            See more
+         </button>
       </section>
    </body>
 </html>

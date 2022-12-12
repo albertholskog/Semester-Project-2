@@ -10,7 +10,9 @@ export async function apiCall(url, method, verification, form) {
       });
 
       const jsonData = await data.json();
+
       if (data.ok) {
+         jsonData["ok"] = true;
          return jsonData;
       } else {
          return data;
