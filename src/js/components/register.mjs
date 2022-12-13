@@ -1,19 +1,25 @@
 import { registerUrl } from "../url.mjs";
 import { apiCall } from "./apiCall.mjs";
-const registerInputEmail = document.querySelector("#registerInputEmail");
-const emailErr = document.querySelector("#emailErrReg");
-
-const registerInputName = document.querySelector("#registerInputName");
-const nameErr = document.querySelector("#nameErrReg");
-
-const registerInputPassword = document.querySelector("#registerInputPassword");
-const passwordErr = document.querySelector("#passwordErrReg");
-
-const registerForm = document.querySelector(".register__form");
+import { emailVali } from "./formvalidation.mjs";
+import { displayErrorMessage } from "../innerhtml/displayError.mjs";
 
 export async function registerUser() {
+   const registerForm = document.querySelector(".register__form");
    registerForm.addEventListener("submit", async (e) => {
       e.preventDefault();
+      const registerInputEmail = document.querySelector("#registerInputEmail");
+      const emailErr = document.querySelector("#emailErrReg");
+
+      const registerInputName = document.querySelector("#registerInputName");
+      const nameErr = document.querySelector("#nameErrReg");
+
+      const registerInputPassword = document.querySelector(
+         "#registerInputPassword"
+      );
+
+      const errorContainerRegister = document.querySelector(".error__register");
+      console.log(errorContainerRegister);
+      const passwordErr = document.querySelector("#passwordErrReg");
       const formData = new FormData(registerForm);
       const formDataSeri = Object.fromEntries(formData);
 
@@ -45,19 +51,20 @@ export async function registerUser() {
       try {
          const jsonData = await apiCall(registerUrl, "POST", "", formDataSeri);
 
+         if (jsonData.ok) {
+            console.log("okie");
+         } else {
+            console.log("heh");
+            errorContainerRegister.innerHTML = displayErrorMessage(
+               "Email or password or name is incorrect "
+            );
+
+            registerInputName.classList.remove("border-green");
+            registerInputName.classList.add("border-err");
+         }
          console.log(jsonData);
       } catch (error) {
          console.log(error);
-      } finally {
-         setTimeout(() => {
-            window.location.reload();
-         }, "2200");
       }
    });
-}
-
-export function emailVali(email) {
-   const regEx = /^([a-zA-Z0-9-_.]+)@(stud.noroff.no)$/;
-   const emailMatch = regEx.test(email);
-   return emailMatch;
 }

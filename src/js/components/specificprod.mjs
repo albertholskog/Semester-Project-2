@@ -2,6 +2,8 @@ import { listingsEntryUrl } from "../url.mjs";
 import { apiCall } from "./apiCall.mjs";
 import { timeformat } from "./timeformat.mjs";
 import { sortArray } from "./sort.mjs";
+import { userName } from "./localstorage.mjs";
+import { deleteApiCall } from "./deletelisting.mjs";
 
 export async function listingsEntryApiCall() {
    const carouselItem = document.querySelector(".carousel-inner");
@@ -16,7 +18,26 @@ export async function listingsEntryApiCall() {
 
    try {
       const element = await apiCall(listingsEntryUrl, "GET");
-      console.log(element.media);
+
+      if (element.seller.name === userName) {
+         const formBid = document.querySelector(".form__bid");
+         formBid.innerHTML = "";
+         const containerDelete = document.querySelector(".container__delete");
+         containerDelete.innerHTML = ` <button
+                                          type="submit"
+                                          class="btn btn-secondary shadow btn__card rounded-circle mt-2 btn__delete"
+                                       >
+                                          Delete
+                                       </button>`;
+         const btnDelete = document.querySelector(".btn__delete");
+         btnDelete.addEventListener("click", () => {
+            deleteApiCall();
+            setTimeout(() => {
+               window.location.reload();
+            }, 1000);
+         });
+      }
+
       const [daysRemaining, hoursRemaining, minuteRemaining, secondRemaining] =
          timeformat(`${element.endsAt}`);
 
@@ -27,13 +48,12 @@ export async function listingsEntryApiCall() {
                                           <img
                                              src="../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg"
                                              onerror="this.src = '../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
-                                             class="carousel__prod"
+                                             class="carousel__prod shadow"
                                              alt="product image for ${element.title}"
                                           />
                                        </div>`;
       } else {
          for (let i = 0; i < element.media.length; i++) {
-            console.log(element.media);
             carouselItem.innerHTML += `   <div class="carousel-item active h-100">
                                        <img
                                           src="${element.media[i]}"
@@ -50,7 +70,6 @@ export async function listingsEntryApiCall() {
       if (element.bids.length >= 1) {
          const lastBid = element.bids[element.bids.length - 1].amount;
 
-         console.log("3");
          containerBidCurrent.innerHTML = `
                                           <h3 class="fs-4 text-success fw-light text-center">
                                                 Current Bid: 
@@ -75,7 +94,7 @@ export async function listingsEntryApiCall() {
 
          for (let i = 0; i < bidName.length; i++) {
             const bidUser = bidName[i];
-            console.log("4");
+
             containerBidHistory.innerHTML += ` <p class="text-success fw-light">${bidUser.bidderName}<span class="ms-5">${bidUser.amount}</span></p>`;
          }
       } else {

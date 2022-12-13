@@ -47,15 +47,6 @@
                id="navbarToggler"
             >
                <div class="container__navbar--link"></div>
-               <!-- <form class=" ">
-                  <input
-                     name="search"
-                     class="form-control search__bar"
-                     type="search"
-                     placeholder="Search"
-                     aria-label="Search"
-                  />
-               </form> -->
             </div>
          </div>
       </nav>
@@ -164,7 +155,7 @@
          tabindex="-1"
       >
          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content bg-success">
                <div class="modal-header">
                   <h5 class="modal-title" id="loginRegisterModalToggleLabel">
                      Login
@@ -176,7 +167,7 @@
                      aria-label="Close"
                   ></button>
                </div>
-               <form class="modal-body login__form">
+               <form class="modal-body login__form bg-success">
                   <div class="mb-3">
                      <label for="loginInputEmail" class="form-label"
                         >Email address</label
@@ -212,7 +203,7 @@
                   </div>
                </form>
                <div
-                  class="modal-footer justify-content-center align-items-center error__login"
+                  class="modal-footer justify-content-center align-items-center bg-success error__login"
                ></div>
                <div>
                   <button
@@ -235,7 +226,7 @@
          tabindex="-1"
       >
          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+            <div class="modal-content bg-success">
                <div class="modal-header">
                   <h5 class="modal-title" id="registerModalToggleLabel">
                      Register User
@@ -247,7 +238,7 @@
                      aria-label="Close"
                   ></button>
                </div>
-               <form class="modal-body register__form">
+               <form class="modal-body register__form bg-success">
                   <div class="mb-3">
                      <label for="registerInputEmail" class="form-label"
                         >Email address</label
@@ -295,6 +286,9 @@
                      </button>
                   </div>
                </form>
+               <div
+                  class="modal-footer justify-content-center align-items-center bg-success error__register"
+               ></div>
                <div>
                   <button
                      class="btn mb-1"
@@ -367,7 +361,9 @@
          <div class="container-lg">
             <div class="row container__card"></div>
          </div>
-         <button class="btn btn-round btn-lg bg-secondary mx-auto d-block">
+         <button
+            class="btn btn-round btn-lg bg-secondary mx-auto d-block btn__seemore"
+         >
             See more
          </button>
       </section>

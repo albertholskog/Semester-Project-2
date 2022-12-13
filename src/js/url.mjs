@@ -9,10 +9,10 @@ export const profillistingsUrl = `${baseApi}/api/v1/auction/profiles/${userName}
 export const profilUrl = `${baseApi}/api/v1/auction/profiles/${userName}?_listings=true&sortOrder=desc&_active=true`;
 export const updateAvatarUrl = `${baseApi}/api/v1/auction/profiles/${userName}/media`;
 
-export const listingsEntryUrl = `${baseApi}/api/v1/auction/listings/${id}?_bids=true`;
+export const listingsEntryUrl = `${baseApi}/api/v1/auction/listings/${id}?_bids=true&_seller=true`;
 export const bidUrl = `${baseApi}/api/v1/auction/listings/${id}/bids`;
 
 export const createListingUrl = `${baseApi}/api/v1/auction/listings`;
 export const creditsUrl = `${baseApi}/api/v1/auction/profiles/${userName}/credits`;
 
-export const deleteEntryUrl = `${baseApi}/api/v1/auction/listings/<id>`;
+export const deleteEntryUrl = `${baseApi}/api/v1/auction/listings/${id}`;

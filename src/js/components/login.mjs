@@ -1,5 +1,5 @@
 import { loginUrl } from "../url.mjs";
-import { emailVali } from "./register.mjs";
+import { emailVali } from "./formvalidation.mjs";
 import { apiCall } from "./apiCall.mjs";
 import { displayErrorMessage } from "../innerhtml/displayError.mjs";
 
@@ -49,12 +49,15 @@ export async function loginApiCall() {
             localStorage.setItem("accessToken", accessToken);
             setTimeout(() => {
                window.location.reload();
-            }, "200");
+            }, 200);
          } else {
             // const errormessage = jsonData.errors.message;
             // console.log(errormessage);
-            errorResponsContainer.innerHTML =
-               displayErrorMessage("errormessage");
+            errorResponsContainer.innerHTML = displayErrorMessage(
+               "Email or password is incorrect"
+            );
+            loginInputPassword.classList.remove("border-green");
+            loginInputPassword.classList.add("border-err");
          }
 
          console.log(jsonData);

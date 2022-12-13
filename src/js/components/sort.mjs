@@ -3,5 +3,4 @@ function sortlistArr(a, b) {
 }
 export function sortArray(list) {
    list.sort(sortlistArr);
-   console.log(list);
 }
