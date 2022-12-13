@@ -4,6 +4,7 @@ import { timeformat } from "./timeformat.mjs";
 import { sortArray } from "./sort.mjs";
 import { userName } from "./localstorage.mjs";
 import { deleteApiCall } from "./deletelisting.mjs";
+import { displayErrorMessage } from "../innerhtml/displayError.mjs";
 
 export async function listingsEntryApiCall() {
    const carouselItem = document.querySelector(".carousel-inner");
@@ -128,5 +129,8 @@ export async function listingsEntryApiCall() {
       return bidName;
    } catch (error) {
       console.log(error);
+      const errorMessageContainer = document.querySelector(".error__container");
+
+      errorMessageContainer.innerHTML = displayErrorMessage();
    }
 }

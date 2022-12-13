@@ -3,12 +3,13 @@ import { bidUrl } from "../url.mjs";
 import { token, credit } from "./localstorage.mjs";
 import { creditCheckApiCall } from "./creditcheck.mjs";
 import { listingsEntryApiCall } from "./specificprod.mjs";
-
-const bidInput = document.querySelector("#bid__input");
-const formBid = document.querySelector(".form__bid");
-const errorBid = document.querySelector(".error__bid");
+import { displayErrorMessage } from "../innerhtml/displayError.mjs";
 
 export async function makeBid() {
+   const errorContainer = document.querySelector(".container__delete");
+   const bidInput = document.querySelector("#bid__input");
+   const formBid = document.querySelector(".form__bid");
+   const errorBid = document.querySelector(".error__bid");
    formBid.addEventListener("submit", async (e) => {
       e.preventDefault();
       const currentArr = await listingsEntryApiCall();
@@ -27,13 +28,16 @@ export async function makeBid() {
                apiCall(bidUrl, "POST", token, bidAmount);
                console.log("inni første");
                creditCheckApiCall();
+               setTimeout(() => {
+                  window.location.reload();
+               }, 500);
             } else {
                console.log("ute");
                bidInput.classList.add("border-err");
-               errorBid.innerHTML = `Your bid must be higher than the current bid`;
+               errorBid.innerHTML = `Bid must be higher than the current bid`;
             }
          } catch (error) {
-            console.log(error);
+            errorContainer.innerHTML = displayErrorMessage();
          }
       } else {
          try {
@@ -41,13 +45,16 @@ export async function makeBid() {
                apiCall(bidUrl, "POST", token, bidAmount);
                console.log("inni 2");
                creditCheckApiCall();
+               setTimeout(() => {
+                  window.location.reload();
+               }, 500);
             } else {
                console.log("ute 2");
                bidInput.classList.add("border-err");
-               errorBid.innerHTML = `Your bid must be higher than the current bid`;
+               errorBid.innerHTML = `Bid must be higher than the current bid`;
             }
          } catch (error) {
-            console.log(error);
+            errorContainer.innerHTML = displayErrorMessage();
          }
       }
    });

@@ -62,7 +62,7 @@ export async function loginApiCall() {
 
          console.log(jsonData);
       } catch (error) {
-         console.log(error);
+         errorResponsContainer.innerHTML = displayErrorMessage();
       }
    });
 }

@@ -64,7 +64,7 @@ export async function registerUser() {
          }
          console.log(jsonData);
       } catch (error) {
-         console.log(error);
+         errorContainerRegister.innerHTML = displayErrorMessage();
       }
    });
 }
