@@ -38,7 +38,7 @@ function showSearchResult(result) {
 
          if (element.bids.length === 0) {
             return ` <div class="col-12 col-md-6 col-lg-4 mb-5">
-                     <div class="card position-relative shadow h-100">
+                     <div class="card position-relative shadow h-100 bg-light">
                      <a href="/specificprod.html?id=${element.id}">
                         <img class="card-img-top card__size--img"
                         src="${element.media[0]}"

@@ -1,6 +1,7 @@
 import { listingsEntryUrl } from "../url.mjs";
 import { apiCall } from "./apiCall.mjs";
 import { timeformat } from "./timeformat.mjs";
+import { sortArray } from "./sort.mjs";
 
 export async function listingsEntryApiCall() {
    const carouselItem = document.querySelector(".carousel-inner");
@@ -20,12 +21,13 @@ export async function listingsEntryApiCall() {
          timeformat(`${element.endsAt}`);
 
       const bidName = element.bids;
+
       if (element.media.length === 0) {
          carouselItem.innerHTML += `   <div class="carousel-item active h-100">
                                           <img
                                              src="../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg"
                                              onerror="this.src = '../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
-                                             class="d-block w-100 h-100"
+                                             class="carousel__prod"
                                              alt="product image for ${element.title}"
                                           />
                                        </div>`;
@@ -36,15 +38,18 @@ export async function listingsEntryApiCall() {
                                        <img
                                           src="${element.media[i]}"
                                           onerror="this.src = '../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
-                                          class="d-block w-100 h-100"
+                                          class="carousel__prod"
                                           alt="product image for ${element.title}"
                                        />
                                     </div>`;
          }
       }
 
+      sortArray(element.bids);
+
       if (element.bids.length >= 1) {
          const lastBid = element.bids[element.bids.length - 1].amount;
+
          console.log("3");
          containerBidCurrent.innerHTML = `
                                           <h3 class="fs-4 text-success fw-light text-center">
@@ -101,6 +106,7 @@ export async function listingsEntryApiCall() {
                                        </p>`;
       }
       spinner.innerHTML = "";
+      return bidName;
    } catch (error) {
       console.log(error);
    }

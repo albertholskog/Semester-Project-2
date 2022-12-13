@@ -35,19 +35,14 @@ export async function createListingApiCall() {
       console.log(listingObj);
 
       try {
-         // const jsonData =
-         apiCall(createListingUrl, "POST", token, listingObj);
+         await apiCall(createListingUrl, "POST", token, listingObj);
          setTimeout(() => {
             window.location.reload();
          }, "200");
+
          // return jsonData;
       } catch (error) {
          console.log(error);
       }
-      // finally {
-      //    setTimeout(() => {
-      //       window.location.reload();
-      //    }, "200");
-      // }
    });
 }
