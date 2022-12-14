@@ -1,8 +1,11 @@
 import { token } from "./localstorage.mjs";
 
-const navbarlinks = document.querySelector(".container__navbar--link");
+/**
+ * updatenavbar checks if the user has a token, if he does then navbar will update itself
+ */
 
 export function updatenavbar() {
+   const navbarlinks = document.querySelector(".container__navbar--link");
    if (token !== null) {
       navbarlinks.innerHTML = ` <ul class="navbar-nav">
                                     <li class="nav-item">

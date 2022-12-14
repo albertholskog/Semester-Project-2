@@ -1,13 +1,13 @@
+/**
+ * Calculates the time remaining until the given end time.
+ *
+ * @param {string} endTime - The end time, as a date and time string.
+ * @returns {number[]} An array of the form [days, hours, minutes, seconds]
+ *   representing the time remaining until the end time.
+ */
+
 export function timeformat(endTime) {
    const listingEndTime = new Date(`${endTime}`);
-
-   // const newTime = Intl.DateTimeFormat("default",{
-   //    dateStyle: "short",
-   //    timeStyle: "short"
-   // }).format(listingEndTime)
-   // const test = newTime
-   // console.log(test);
-   // console.log( parseFloat(test));
 
    const currentTime = new Date().getTime();
 

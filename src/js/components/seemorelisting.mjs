@@ -9,6 +9,7 @@ export async function seeMoreApiCall() {
       const cardContainer = document.querySelector(".container__card");
 
       try {
+         cardContainer.innerHTML = "";
          const jsonData = await apiCall(getAllListingUrl, "GET");
          for (let i = 0; i < jsonData.length; i++) {
             const element = jsonData[i];

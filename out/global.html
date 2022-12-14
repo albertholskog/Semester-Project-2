@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <title>JSDoc: Global</title>
+
+      <script src="scripts/prettify/prettify.js"></script>
+      <script src="scripts/prettify/lang-css.js"></script>
+      <!--[if lt IE 9]>
+         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+      <link
+         type="text/css"
+         rel="stylesheet"
+         href="styles/prettify-tomorrow.css"
+      />
+      <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css" />
+   </head>
+
+   <body>
+      <div id="main">
+         <h1 class="page-title">Global</h1>
+
+         <section>
+            <header>
+               <h2></h2>
+            </header>
+
+            <article>
+               <div class="container-overview">
+                  <dl class="details"></dl>
+               </div>
+
+               <h3 class="subsection-title">Methods</h3>
+
+               <h4 class="name" id="apiCall">
+                  <span class="type-signature"></span>apiCall<span
+                     class="signature"
+                     >(url, method, verification, form)</span
+                  ><span class="type-signature"></span>
+               </h4>
+
+               <div class="description">
+                  Api Call function that takes 4 argument to have a reusable api
+                  fucnticon
+               </div>
+
+               <h5>Parameters:</h5>
+
+               <table class="params">
+                  <thead>
+                     <tr>
+                        <th>Name</th>
+
+                        <th>Type</th>
+
+                        <th class="last">Description</th>
+                     </tr>
+                  </thead>
+
+                  <tbody>
+                     <tr>
+                        <td class="name"><code>url</code></td>
+
+                        <td class="type">
+                           <span class="param-type">string</span>
+                        </td>
+
+                        <td class="description last">
+                           url is stored in url.mjs and you can find with url
+                           you need from the api doc
+                        </td>
+                     </tr>
+
+                     <tr>
+                        <td class="name"><code>method</code></td>
+
+                        <td class="type">
+                           <span class="param-type">string</span>
+                        </td>
+
+                        <td class="description last">
+                           http methet you need to use
+                        </td>
+                     </tr>
+
+                     <tr>
+                        <td class="name"><code>verification</code></td>
+
+                        <td class="type">
+                           <span class="param-type">string</span>
+                        </td>
+
+                        <td class="description last">
+                           accestoken that is stored in local storage
+                        </td>
+                     </tr>
+
+                     <tr>
+                        <td class="name"><code>form</code></td>
+
+                        <td class="type">
+                           <span class="param-type">object</span>
+                        </td>
+
+                        <td class="description last">
+                           form is from input that the user is typing inn from
+                           the input fild
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+
+               <dl class="details">
+                  <dt class="tag-source">Source:</dt>
+                  <dd class="tag-source">
+                     <ul class="dummy">
+                        <li>
+                           <a href="apiCall.mjs.html">apiCall.mjs</a>,
+                           <a href="apiCall.mjs.html#line11">line 11</a>
+                        </li>
+                     </ul>
+                  </dd>
+               </dl>
+
+               <h5>Returns:</h5>
+
+               <h4 class="name" id="getAllListingApiCall">
+                  <span class="type-signature"></span>getAllListingApiCall<span
+                     class="signature"
+                     >()</span
+                  ><span class="type-signature"></span>
+               </h4>
+
+               <div class="description">
+                  getAllListingsApiCall is getting object form the apicall and
+                  looping through it so that you can publish the page, it check
+                  for the last bid.
+               </div>
+
+               <dl class="details">
+                  <dt class="tag-source">Source:</dt>
+                  <dd class="tag-source">
+                     <ul class="dummy">
+                        <li>
+                           <a href="getlisting.mjs.html">getlisting.mjs</a>,
+                           <a href="getlisting.mjs.html#line13">line 13</a>
+                        </li>
+                     </ul>
+                  </dd>
+               </dl>
+
+               <h4 class="name" id="loginApiCall">
+                  <span class="type-signature"></span>loginApiCall<span
+                     class="signature"
+                     >()</span
+                  ><span class="type-signature"></span>
+               </h4>
+
+               <div class="description">
+                  loginApiCall function check if the user is input is correct,
+                  email need to have @stud.noroff.no password need to be more
+                  than 7 if it pass then you will use apicall. the api call will
+                  save token, username and credit to local storage if you get
+                  somting wrong the user will get a red border on the input area
+                  and a text that say what happened.
+               </div>
+
+               <dl class="details">
+                  <dt class="tag-source">Source:</dt>
+                  <dd class="tag-source">
+                     <ul class="dummy">
+                        <li>
+                           <a href="login.mjs.html">login.mjs</a>,
+                           <a href="login.mjs.html#line22">line 22</a>
+                        </li>
+                     </ul>
+                  </dd>
+               </dl>
+
+               <h4 class="name" id="makeBid">
+                  <span class="type-signature"></span>makeBid<span
+                     class="signature"
+                     >()</span
+                  ><span class="type-signature"></span>
+               </h4>
+
+               <div class="description">
+                  makeBid is a function that take noe argument, but it has a
+                  addventlistiner that lisen on submit. It checks that you bid
+                  is less than what you have in credit and the bid is greater
+                  than what is the current bid
+               </div>
+
+               <dl class="details">
+                  <dt class="tag-source">Source:</dt>
+                  <dd class="tag-source">
+                     <ul class="dummy">
+                        <li>
+                           <a href="bid.mjs.html">bid.mjs</a>,
+                           <a href="bid.mjs.html#line15">line 15</a>
+                        </li>
+                     </ul>
+                  </dd>
+               </dl>
+
+               <h4 class="name" id="sortArray">
+                  <span class="type-signature"></span>sortArray<span
+                     class="signature"
+                     >(list)</span
+                  ><span class="type-signature"></span>
+               </h4>
+
+               <div class="description">
+                  sort the element that give you a sort array bast on "amount"
+               </div>
+
+               <h5>Parameters:</h5>
+
+               <table class="params">
+                  <thead>
+                     <tr>
+                        <th>Name</th>
+
+                        <th>Type</th>
+
+                        <th class="last">Description</th>
+                     </tr>
+                  </thead>
+
+                  <tbody>
+                     <tr>
+                        <td class="name"><code>list</code></td>
+
+                        <td class="type">
+                           <span class="param-type">Array.&lt;object></span>
+                        </td>
+
+                        <td class="description last">
+                           array to sort, each element in the array should have
+                           a "amount"
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+
+               <dl class="details">
+                  <dt class="tag-source">Source:</dt>
+                  <dd class="tag-source">
+                     <ul class="dummy">
+                        <li>
+                           <a href="sort.mjs.html">sort.mjs</a>,
+                           <a href="sort.mjs.html#line19">line 19</a>
+                        </li>
+                     </ul>
+                  </dd>
+               </dl>
+
+               <h4 class="name" id="sortlistArr">
+                  <span class="type-signature"></span>sortlistArr<span
+                     class="signature"
+                     >(a, b)</span
+                  ><span class="type-signature"> &rarr; {number}</span>
+               </h4>
+
+               <div class="description">
+                  sortlistArr fix the order of the list from smallest to biggest
+                  amount
+               </div>
+
+               <h5>Parameters:</h5>
+
+               <table class="params">
+                  <thead>
+                     <tr>
+                        <th>Name</th>
+
+                        <th>Type</th>
+
+                        <th class="last">Description</th>
+                     </tr>
+                  </thead>
+
+                  <tbody>
+                     <tr>
+                        <td class="name"><code>a</code></td>
+
+                        <td class="type">
+                           <span class="param-type">Array</span>
+                        </td>
+
+                        <td class="description last">
+                           the first element to compare
+                        </td>
+                     </tr>
+
+                     <tr>
+                        <td class="name"><code>b</code></td>
+
+                        <td class="type">
+                           <span class="param-type">Array</span>
+                        </td>
+
+                        <td class="description last">
+                           the second element to compare
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+
+               <dl class="details">
+                  <dt class="tag-source">Source:</dt>
+                  <dd class="tag-source">
+                     <ul class="dummy">
+                        <li>
+                           <a href="sort.mjs.html">sort.mjs</a>,
+                           <a href="sort.mjs.html#line11">line 11</a>
+                        </li>
+                     </ul>
+                  </dd>
+               </dl>
+
+               <h5>Returns:</h5>
+
+               <div class="param-desc">defference between the "amount"</div>
+
+               <dl>
+                  <dt>Type</dt>
+                  <dd>
+                     <span class="param-type">number</span>
+                  </dd>
+               </dl>
+
+               <h4 class="name" id="timeformat">
+                  <span class="type-signature"></span>timeformat<span
+                     class="signature"
+                     >(endTime)</span
+                  ><span class="type-signature">
+                     &rarr; {Array.&lt;number>}</span
+                  >
+               </h4>
+
+               <div class="description">
+                  Calculates the time remaining until the given end time.
+               </div>
+
+               <h5>Parameters:</h5>
+
+               <table class="params">
+                  <thead>
+                     <tr>
+                        <th>Name</th>
+
+                        <th>Type</th>
+
+                        <th class="last">Description</th>
+                     </tr>
+                  </thead>
+
+                  <tbody>
+                     <tr>
+                        <td class="name"><code>endTime</code></td>
+
+                        <td class="type">
+                           <span class="param-type">string</span>
+                        </td>
+
+                        <td class="description last">
+                           The end time, as a date and time string.
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+
+               <dl class="details">
+                  <dt class="tag-source">Source:</dt>
+                  <dd class="tag-source">
+                     <ul class="dummy">
+                        <li>
+                           <a href="timeformat.mjs.html">timeformat.mjs</a>,
+                           <a href="timeformat.mjs.html#line10">line 10</a>
+                        </li>
+                     </ul>
+                  </dd>
+               </dl>
+
+               <h5>Returns:</h5>
+
+               <div class="param-desc">
+                  An array of the form [days, hours, minutes, seconds]
+                  representing the time remaining until the end time.
+               </div>
+
+               <dl>
+                  <dt>Type</dt>
+                  <dd>
+                     <span class="param-type">Array.&lt;number></span>
+                  </dd>
+               </dl>
+
+               <h4 class="name" id="updatenavbar">
+                  <span class="type-signature"></span>updatenavbar<span
+                     class="signature"
+                     >()</span
+                  ><span class="type-signature"></span>
+               </h4>
+
+               <div class="description">
+                  updatenavbar checks if the user has a token, if he does then
+                  navbar will update itself
+               </div>
+
+               <dl class="details">
+                  <dt class="tag-source">Source:</dt>
+                  <dd class="tag-source">
+                     <ul class="dummy">
+                        <li>
+                           <a href="navbar.mjs.html">navbar.mjs</a>,
+                           <a href="navbar.mjs.html#line9">line 9</a>
+                        </li>
+                     </ul>
+                  </dd>
+               </dl>
+            </article>
+         </section>
+      </div>
+
+      <nav>
+         <h2><a href="index.html">Home</a></h2>
+         <h3>Global</h3>
+         <ul>
+            <li><a href="global.html#apiCall">apiCall</a></li>
+            <li>
+               <a href="global.html#getAllListingApiCall"
+                  >getAllListingApiCall</a
+               >
+            </li>
+            <li><a href="global.html#loginApiCall">loginApiCall</a></li>
+            <li><a href="global.html#makeBid">makeBid</a></li>
+            <li><a href="global.html#sortArray">sortArray</a></li>
+            <li><a href="global.html#sortlistArr">sortlistArr</a></li>
+            <li><a href="global.html#timeformat">timeformat</a></li>
+            <li><a href="global.html#updatenavbar">updatenavbar</a></li>
+         </ul>
+      </nav>
+
+      <br class="clear" />
+
+      <footer>
+         Documentation generated by
+         <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Wed Dec 14
+         2022 13:28:57 GMT+0100 (Central European Standard Time)
+      </footer>
+
+      <script>
+         prettyPrint();
+      </script>
+      <script src="scripts/linenumber.js"></script>
+   </body>
+</html>

@@ -3,15 +3,22 @@ import { timeformat } from "./timeformat.mjs";
 import { apiCall } from "./apiCall.mjs";
 import { cardInnerHTML } from "../innerhtml/innerhtmlcard.mjs";
 import { displayErrorMessage } from "../innerhtml/displayError.mjs";
-const cardContainer = document.querySelector(".container__card");
-const spinner = document.querySelector(".spinner-container");
+import { sortArray } from "./sort.mjs";
+
+/**
+ * getAllListingsApiCall is getting object form the apicall and looping through it so that you can publish the page,
+ * it check for the last bid.
+ */
+
 export async function getAllListingApiCall() {
+   const cardContainer = document.querySelector(".container__card");
+   const spinner = document.querySelector(".spinner-container");
    try {
       const jsonData = await apiCall(getAllListingUrl, "GET");
-
       for (let i = 0; i < 9; i++) {
          const element = jsonData[i];
 
+         sortArray(element.bids);
          const [
             daysRemaining,
             hoursRemaining,
