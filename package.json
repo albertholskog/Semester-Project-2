@@ -4,8 +4,8 @@
    "description": "semester project",
    "main": "index.js",
    "scripts": {
-      "build": "sass scss/styles.scss:css",
-      "watch": "sass --watch styles/scss:dist/css",
+      "build": "sass scss:css",
+      "watch": "sass --watch sass scss:css",
       "test": "npm run test-unit",
       "test-unit": "jest",
       "prepare": "husky install",
