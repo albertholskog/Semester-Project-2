@@ -1,9 +1,9 @@
-import { apiCall } from "./apiCall.mjs";
-import { bidUrl } from "../url.mjs";
-import { token, credit } from "./localstorage.mjs";
-import { creditCheckApiCall } from "./creditcheck.mjs";
-import { listingsEntryApiCall } from "./specificprod.mjs";
-import { displayErrorMessage } from "../innerhtml/displayError.mjs";
+import { apiCall } from "./apiCall.js";
+import { bidUrl } from "../url.js";
+import { token, credit } from "./localstorage.js";
+import { creditCheckApiCall } from "./creditcheck.js";
+import { listingsEntryApiCall } from "./specificprod.js";
+import { displayErrorMessage } from "../innerhtml/displayError.js";
 
 /**
  * makeBid is a function that take noe argument, but it has a addventlistiner that lisen on submit.

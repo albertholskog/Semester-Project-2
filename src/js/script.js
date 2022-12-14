@@ -1,8 +1,8 @@
-import { registerUser } from "./components/register.mjs";
-import { loginApiCall } from "./components/login.mjs";
-import { createListingApiCall } from "./components/createlisting.mjs";
-import { logout } from "./components/logout.mjs";
-import { updatenavbar } from "./components/navbar.mjs";
+import { registerUser } from "./components/register.js";
+import { loginApiCall } from "./components/login.js";
+import { createListingApiCall } from "./components/createlisting.js";
+import { logout } from "./components/logout.js";
+import { updatenavbar } from "./components/navbar.js";
 
 loginApiCall();
 registerUser();

@@ -1,9 +1,9 @@
-import { profillistingsUrl } from "../url.mjs";
-import { apiCall } from "./apiCall.mjs";
-import { token } from "./localstorage.mjs";
-import { timeformat } from "./timeformat.mjs";
-import { myCardInnerHTML } from "../innerhtml/innerhtmlcard.mjs";
-import { displayErrorMessage } from "../innerhtml/displayError.mjs";
+import { profillistingsUrl } from "../url.js";
+import { apiCall } from "./apiCall.js";
+import { token } from "./localstorage.js";
+import { timeformat } from "./timeformat.js";
+import { myCardInnerHTML } from "../innerhtml/innerhtmlcard.js";
+import { displayErrorMessage } from "../innerhtml/displayError.js";
 
 export async function myListingsApiCall() {
    const spinner = document.querySelector(".spinner-container--mylisting");

@@ -1,7 +1,7 @@
-import { creditsUrl } from "../url.mjs";
-import { token } from "./localstorage.mjs";
+import { creditsUrl } from "../url.js";
+import { token } from "./localstorage.js";
 
-import { apiCall } from "./apiCall.mjs";
+import { apiCall } from "./apiCall.js";
 
 export async function creditCheckApiCall() {
    try {

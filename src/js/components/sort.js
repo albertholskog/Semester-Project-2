@@ -6,7 +6,7 @@
  * @returns {number} defference between the "amount"
  */
 
-function sortlistArr(a, b) {
+export function sortlistArr(a, b) {
    return a.amount - b.amount;
 }
 
@@ -14,6 +14,7 @@ function sortlistArr(a, b) {
  * sort the element that give you a sort array bast on "amount"
  * @param {object[]} list - array to sort, each element in the array should have a "amount"
  */
+
 export function sortArray(list) {
    list.sort(sortlistArr);
 }

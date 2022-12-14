@@ -1,7 +1,7 @@
-import { getAllListingUrl } from "../url.mjs";
-import { timeformat } from "./timeformat.mjs";
-import { apiCall } from "./apiCall.mjs";
-import { displayErrorMessage } from "../innerhtml/displayError.mjs";
+import { getAllListingUrl } from "../url.js";
+import { timeformat } from "./timeformat.js";
+import { apiCall } from "./apiCall.js";
+import { displayErrorMessage } from "../innerhtml/displayError.js";
 const searchBar = document.querySelector(".search__bar");
 const containerSearch = document.querySelector(".container__card");
 

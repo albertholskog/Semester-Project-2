@@ -1,6 +1,6 @@
-import { updateAvatarUrl } from "../url.mjs";
-import { token } from "./localstorage.mjs";
-import { apiCall } from "./apiCall.mjs";
+import { updateAvatarUrl } from "../url.js";
+import { token } from "./localstorage.js";
+import { apiCall } from "./apiCall.js";
 
 const formUpdateAvatar = document.querySelector(".form__update--avatar");
 console.log(formUpdateAvatar);

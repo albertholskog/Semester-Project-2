@@ -1,7 +1,7 @@
-import { loginUrl } from "../url.mjs";
-import { emailVali } from "./formvalidation.mjs";
-import { apiCall } from "./apiCall.mjs";
-import { displayErrorMessage } from "../innerhtml/displayError.mjs";
+import { loginUrl } from "../url.js";
+import { emailVali } from "./formvalidation.js";
+import { apiCall } from "./apiCall.js";
+import { displayErrorMessage } from "../innerhtml/displayError.js";
 
 const loginInputEmail = document.querySelector("#loginInputEmail");
 const emailErrLog = document.querySelector("#emailErrLog");

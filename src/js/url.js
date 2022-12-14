@@ -1,5 +1,5 @@
-import { id } from "./components/queryString.mjs";
-import { userName } from "./components/localstorage.mjs";
+import { id } from "./components/queryString.js";
+import { userName } from "./components/localstorage.js";
 const baseApi = "https://api.noroff.dev";
 export const registerUrl = `${baseApi}/api/v1/auction/auth/register`;
 export const loginUrl = `${baseApi}/api/v1/auction/auth/login`;

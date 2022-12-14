@@ -1,9 +1,9 @@
-import { getAllListingUrl } from "../url.mjs";
-import { timeformat } from "./timeformat.mjs";
-import { apiCall } from "./apiCall.mjs";
-import { cardInnerHTML } from "../innerhtml/innerhtmlcard.mjs";
-import { displayErrorMessage } from "../innerhtml/displayError.mjs";
-import { sortArray } from "./sort.mjs";
+import { getAllListingUrl } from "../url.js";
+import { timeformat } from "./timeformat.js";
+import { apiCall } from "./apiCall.js";
+import { cardInnerHTML } from "../innerhtml/innerhtmlcard.js";
+import { displayErrorMessage } from "../innerhtml/displayError.js";
+import { sortArray } from "./sort.js";
 
 /**
  * getAllListingsApiCall is getting object form the apicall and looping through it so that you can publish the page,
@@ -17,7 +17,7 @@ export async function getAllListingApiCall() {
       const jsonData = await apiCall(getAllListingUrl, "GET");
       for (let i = 0; i < 9; i++) {
          const element = jsonData[i];
-
+         console.log(element);
          sortArray(element.bids);
          const [
             daysRemaining,

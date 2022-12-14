@@ -1,6 +1,6 @@
-import { apiCall } from "./apiCall.mjs";
-import { createListingUrl } from "../url.mjs";
-import { token } from "./localstorage.mjs";
+import { apiCall } from "./apiCall.js";
+import { createListingUrl } from "../url.js";
+import { token } from "./localstorage.js";
 
 export async function createListingApiCall() {
    const formCreateListing = document.querySelector(".form__create--listing");

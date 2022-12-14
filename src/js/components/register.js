@@ -1,7 +1,7 @@
-import { registerUrl } from "../url.mjs";
-import { apiCall } from "./apiCall.mjs";
-import { emailVali } from "./formvalidation.mjs";
-import { displayErrorMessage } from "../innerhtml/displayError.mjs";
+import { registerUrl } from "../url.js";
+import { apiCall } from "./apiCall.js";
+import { emailVali } from "./formvalidation.js";
+import { displayErrorMessage } from "../innerhtml/displayError.js";
 
 export async function registerUser() {
    const registerForm = document.querySelector(".register__form");

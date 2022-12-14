@@ -1,7 +1,7 @@
-import { apiCall } from "./apiCall.mjs";
-import { getAllListingUrl } from "../url.mjs";
-import { timeformat } from "./timeformat.mjs";
-import { cardInnerHTML } from "../innerhtml/innerhtmlcard.mjs";
+import { apiCall } from "./apiCall.js";
+import { getAllListingUrl } from "../url.js";
+import { timeformat } from "./timeformat.js";
+import { cardInnerHTML } from "../innerhtml/innerhtmlcard.js";
 
 export async function seeMoreApiCall() {
    const btnSeeMore = document.querySelector(".btn__seemore");

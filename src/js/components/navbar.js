@@ -1,4 +1,4 @@
-import { token } from "./localstorage.mjs";
+import { token } from "./localstorage.js";
 
 /**
  * updatenavbar checks if the user has a token, if he does then navbar will update itself

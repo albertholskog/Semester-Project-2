@@ -1,7 +1,7 @@
-import { profilUrl } from "../url.mjs";
-import { token } from "./localstorage.mjs";
-import { apiCall } from "./apiCall.mjs";
-import { displayErrorMessage } from "../innerhtml/displayError.mjs";
+import { profilUrl } from "../url.js";
+import { token } from "./localstorage.js";
+import { apiCall } from "./apiCall.js";
+import { displayErrorMessage } from "../innerhtml/displayError.js";
 
 export async function profilApiCall() {
    const errorContainer = document.querySelector(".container__error--display");

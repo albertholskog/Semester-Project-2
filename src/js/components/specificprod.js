@@ -1,10 +1,10 @@
-import { listingsEntryUrl } from "../url.mjs";
-import { apiCall } from "./apiCall.mjs";
-import { timeformat } from "./timeformat.mjs";
-import { sortArray } from "./sort.mjs";
-import { userName } from "./localstorage.mjs";
-import { deleteApiCall } from "./deletelisting.mjs";
-import { displayErrorMessage } from "../innerhtml/displayError.mjs";
+import { listingsEntryUrl } from "../url.js";
+import { apiCall } from "./apiCall.js";
+import { timeformat } from "./timeformat.js";
+import { sortArray } from "./sort.js";
+import { userName } from "./localstorage.js";
+import { deleteApiCall } from "./deletelisting.js";
+import { displayErrorMessage } from "../innerhtml/displayError.js";
 
 export async function listingsEntryApiCall() {
    const carouselItem = document.querySelector(".carousel-inner");
@@ -19,7 +19,7 @@ export async function listingsEntryApiCall() {
 
    try {
       const element = await apiCall(listingsEntryUrl, "GET");
-
+      console.log(element);
       if (element.seller.name === userName) {
          const formBid = document.querySelector(".form__bid");
          formBid.innerHTML = "";
