@@ -65,11 +65,12 @@ export function updatenavbar() {
                                     </li>
                                     <li class="nav-item ">
                                         <a
-                                            class="nav-link  text-center text-success mx-lg-2 fs-5 fw-light"
+                                            class="nav-link  text-center text-success mx-lg-2 fs-5 fw-light "
                                             href="#loginRegisterModalToggle"
                                             id="navbarDropdown"
                                             role="button"
                                             data-bs-toggle="modal"
+                                            data-cy="login-modal"
                                             
                                         >
                                             Login
