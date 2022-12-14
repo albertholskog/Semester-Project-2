@@ -16,19 +16,20 @@ export function updatenavbar() {
                                         >
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a
+                                        <a 
                                             class="nav-link dropdown-toggle text-center text-success mx-lg-2 fs-5 fw-light"
                                             href="#"
                                             id="navbarDropdown"
                                             role="button"
                                             data-bs-toggle="dropdown"
                                             aria-expanded="false"
+                                            data-cy="profil-container"
                                         >
                                             Profile
                                         </a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <li>
-                                            <a
+                                            <a data-cy="my-profil"
                                                 class="dropdown-item text-center"
                                                 href="/profil.html"
                                                 >My Profile</a
@@ -36,7 +37,7 @@ export function updatenavbar() {
                                             </li>
                                             <li><hr class="dropdown-divider"/></li>
                                             <li class="d-flex justify-content-center">
-                                            <a class="dropdown-item text-center logout__btn" href="#"
+                                            <a class="dropdown-item text-center logout__btn" data-cy="logout-btn" href="#"
                                                 >Logout</a
                                             >
                                             </li>
@@ -49,6 +50,7 @@ export function updatenavbar() {
                                             data-bs-target="#createlistingModal"
                                             type="button"
                                             href="/createlisting.html"
+                                            data-cy="create-listing"
                                             >Create listing</a
                                         >
                                     </li>

@@ -5,6 +5,11 @@ import { sortArray } from "./sort.js";
 import { userName } from "./localstorage.js";
 import { deleteApiCall } from "./deletelisting.js";
 import { displayErrorMessage } from "../innerhtml/displayError.js";
+import { referrer } from "./deletelisting.js";
+import {
+   prodBidInnerHtml,
+   prodInfoInnerHtml,
+} from "../innerhtml/innerthmlprodinfo.js";
 
 export async function listingsEntryApiCall() {
    const carouselItem = document.querySelector(".carousel-inner");
@@ -25,6 +30,7 @@ export async function listingsEntryApiCall() {
          formBid.innerHTML = "";
          const containerDelete = document.querySelector(".container__delete");
          containerDelete.innerHTML = ` <button
+                                          data-cy="btn-delete"
                                           type="submit"
                                           class="btn btn-secondary shadow btn__card rounded-circle mt-2 btn__delete"
                                        >
@@ -34,8 +40,8 @@ export async function listingsEntryApiCall() {
          btnDelete.addEventListener("click", () => {
             deleteApiCall();
             setTimeout(() => {
-               window.location.reload();
-            }, 1000);
+               referrer();
+            }, 500);
          });
       }
 
@@ -71,55 +77,39 @@ export async function listingsEntryApiCall() {
       if (element.bids.length >= 1) {
          const lastBid = element.bids[element.bids.length - 1].amount;
 
-         containerBidCurrent.innerHTML = `
-                                          <h3 class="fs-4 text-success fw-light text-center">
-                                                Current Bid: 
-                                          </h3>
-                                          <h3 class="fs-4 text-success fw-light text-center">
-                                                   ${lastBid}
-                                          </h3>
-                                          <h3 class="fs-4 text-success fw-light text-center mt-3 ">
-                                                Time remaining:
-                                          </h3>
-                                          <h3 class="fs-4 text-success fw-light text-center">
-                                                <span class="me-1 text-success fw-light">${daysRemaining}d </span>                    
-                                                <span class="me-1 text-success fw-light">${hoursRemaining}h </span>                    
-                                                <span class="me-1 text-success fw-light">${minuteRemaining}m </span>                    
-                                                <span class="text-success fw-light" >${secondRemaining}s </span>
-                                          </h3>`;
-
-         containerBidInfo.innerHTML = `<p class="text-success fw-light m-1">
-                                          ${element.title}<br />
-                                          ${element.description}
-                                     </p>`;
+         prodBidInnerHtml(
+            containerBidCurrent,
+            lastBid,
+            daysRemaining,
+            hoursRemaining,
+            minuteRemaining,
+            secondRemaining
+         );
+         prodInfoInnerHtml(containerBidInfo, element);
 
          for (let i = 0; i < bidName.length; i++) {
             const bidUser = bidName[i];
 
-            containerBidHistory.innerHTML += ` <p class="text-success fw-light">${bidUser.bidderName}<span class="ms-5">${bidUser.amount}</span></p>`;
+            containerBidHistory.innerHTML += `<div class="d-flex justify-content-between ">
+                                                <p class="text-success fw-light">
+                                                ${bidUser.bidderName}
+                                                </p>
+                                                <p class="text-success fw-light">
+                                                ${bidUser.amount}
+                                                </p>
+                                                </div>`;
          }
       } else {
          console.log("5");
-         containerBidCurrent.innerHTML = `<h3 class="fs-4 text-success fw-light text-center">
-                                                   Current Bid: 
-                                          </h3>
-                                           <h3 class="fs-4 text-success fw-light text-center">
-                                                   0
-                                          </h3>
-                                          <h3 class="fs-4 text-success fw-light text-center mt-3 ">
-                                                Time remaining:
-                                          </h3>
-                                          <h3 class="fs-4 text-success fw-light text-center">
-                                             <span class="me-1 text-success fw-light">${daysRemaining}d </span>                    
-                                             <span class="me-1 text-success fw-light">${hoursRemaining}h </span>                    
-                                             <span class="me-1 text-success fw-light">${minuteRemaining}m </span>                    
-                                             <span class="text-success fw-light" >${secondRemaining}s </span>
-                                          </h3>`;
-
-         containerBidInfo.innerHTML = `<p class="text-success m-1">
-                                       ${element.title}<br />
-                                       ${element.description}
-                                     </p>`;
+         prodBidInnerHtml(
+            containerBidCurrent,
+            0,
+            daysRemaining,
+            hoursRemaining,
+            minuteRemaining,
+            secondRemaining
+         );
+         prodInfoInnerHtml(containerBidInfo, element);
 
          containerBidHistory.innerHTML = ` <p class="text-success">
                                          No bidding history

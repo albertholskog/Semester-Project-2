@@ -76,6 +76,7 @@
                   <div class="mb-3">
                      <label for="titleInput" class="form-label">Title*</label>
                      <input
+                        data-cy="listing-title"
                         required
                         type="text"
                         name="title"
@@ -88,6 +89,7 @@
                         >Description</label
                      >
                      <textarea
+                        data-cy="listing-description"
                         name="description"
                         class="form-control"
                         id="descriptionInput"
@@ -97,6 +99,7 @@
                   <div class="mb-3">
                      <label for="imageUrlInput" class="form-label">Image</label>
                      <input
+                        data-cy="listing-media"
                         placeholder="https://example.com.jpg"
                         name="media"
                         type="text"
@@ -104,6 +107,7 @@
                         id="imageUrlInput1"
                      />
                      <input
+                        data-cy="listing-media-2"
                         placeholder="https://example.com.jpg"
                         name="media"
                         type="text"
@@ -111,6 +115,7 @@
                         id="imageUrlInput2"
                      />
                      <input
+                        data-cy="listing-media-3"
                         placeholder="https://example.com.jpg"
                         name="media"
                         type="text"
@@ -121,6 +126,7 @@
                   <div class="mb-3">
                      <label for="dataInput" class="form-label">Date*</label>
                      <input
+                        data-cy="listing-date"
                         required
                         name="endsAt"
                         type="datetime-local"
@@ -130,6 +136,7 @@
                   </div>
                   <div class="d-flex justify-content-center align-items-center">
                      <button
+                        data-cy="listing-btn"
                         type="submit"
                         class="btn btn-secondary rounded-circle shadow btn__size--reguler"
                      >
@@ -311,9 +318,7 @@
          <div class="container-lg">
             <div class="row justify-content-center align-items-center">
                <div class="col-12 col-sm-6">
-                  <h2
-                     class="mb-3 text-success text-center text-sm-start fw-light"
-                  >
+                  <h2 class="mb-3 text-success text-center text-sm-start">
                      Welcome to Bid:it
                   </h2>
                   <p class="text-success fw-light">
@@ -324,12 +329,8 @@
                      doloremque cum.
                   </p>
                </div>
-               <div class="col-12 col-sm-6">
-                  <img
-                     src="/image/Online store _Monochromatic.png"
-                     class="img-fluid"
-                     alt=""
-                  />
+               <div class="col-12 col-sm-6 text-end">
+                  <img src="/image/hammer.svg" class="img-fluid test" alt="" />
                </div>
             </div>
          </div>

@@ -4,6 +4,8 @@ import { token } from "./localstorage.js";
 
 export async function deleteApiCall() {
    apiCall(deleteEntryUrl, "DELETE", token);
+}
 
-   history.back();
+export function referrer() {
+   window.location = document.referrer;
 }

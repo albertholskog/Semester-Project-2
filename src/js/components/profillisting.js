@@ -2,7 +2,7 @@ import { profillistingsUrl } from "../url.js";
 import { apiCall } from "./apiCall.js";
 import { token } from "./localstorage.js";
 import { timeformat } from "./timeformat.js";
-import { myCardInnerHTML } from "../innerhtml/innerhtmlcard.js";
+import { cardInnerHTML } from "../innerhtml/innerhtmlcard.js";
 import { displayErrorMessage } from "../innerhtml/displayError.js";
 
 export async function myListingsApiCall() {
@@ -24,7 +24,7 @@ export async function myListingsApiCall() {
             secondRemaining,
          ] = timeformat(`${element.endsAt}`);
 
-         myCardInnerHTML(
+         cardInnerHTML(
             containerMyListing,
             element,
             daysRemaining,
