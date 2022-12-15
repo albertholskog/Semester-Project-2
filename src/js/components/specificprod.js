@@ -51,9 +51,9 @@ export async function listingsEntryApiCall() {
       const bidName = element.bids;
 
       if (element.media.length === 0) {
-         carouselItem.innerHTML += `   <div class="carousel-item active h-100 ">
+         carouselItem.innerHTML += `   <div class="carousel-item active  ">
                                           <img
-                                             src="../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg"
+                                             src="./image/errorimg.jpg"
                                              onerror="this.src ='./image/errorimg.jpg';"
                                              class="carousel__prod "
                                              alt="product image for ${element.title}"
@@ -61,7 +61,7 @@ export async function listingsEntryApiCall() {
                                        </div>`;
       } else {
          for (let i = 0; i < element.media.length; i++) {
-            carouselItem.innerHTML += `   <div class="carousel-item active h-100 ">
+            carouselItem.innerHTML += `   <div class="carousel-item active ">
                                        <img
                                           src="${element.media[i]}"
                                           onerror="this.src ='./image/errorimg.jpg';"
