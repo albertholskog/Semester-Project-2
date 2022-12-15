@@ -12,7 +12,7 @@ export function cardInnerHTML(
                                             <a href="./specificprod.html?id=${element.id}">
                                                 <img class="card-img-top card__size--img"
                                                 src="${element.media[0]}"
-                                                onerror="this.src = './image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
+                                                onerror="this.src = '../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
                                                 alt="image of the product"/>
                                                 </a>
                                                 <h4 class="card-text position-absolute top-0 start-0 p-1 bg-light rounded-1"> 
