@@ -9,7 +9,7 @@ export function cardInnerHTML(
 ) {
    return (container.innerHTML += ` <div class="col-12 col-md-6 col-lg-4 mb-4 rounded-bottom">
                                         <div class="card position-relative shadow h-100 bg-ligth border-0 rounded-bottom bg-light">
-                                            <a href="./specificprod.html?id=${element.id}">
+                                            <a href="../specificprod.html?id=${element.id}">
                                                 <img class="card-img-top card__size--img"
                                                 src="${element.media[0]}"
                                                 onerror="this.src = './image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
