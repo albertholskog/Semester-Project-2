@@ -61,7 +61,7 @@ export function updatenavbar() {
                                     <li class="nav-item">
                                         <a
                                             class="nav-link text-center text-success mx-lg-2 fs-5"
-                                            href="/index.html"
+                                            href="../index.html"
                                             >Home</a
                                         >
                                     </li>
