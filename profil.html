@@ -2,6 +2,7 @@
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
+      <meta name="description" content="Profil page for bid it" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="/css/styles.css" />
@@ -21,7 +22,7 @@
       />
       <script src="/src/js/script.js" type="module"></script>
       <script src="/src/js/profil.js" type="module"></script>
-      <title>Home page</title>
+      <title>Profil page</title>
    </head>
    <body class="bg-primary d-flex flex-column justify-content-between">
       <nav class="navbar navbar-expand-lg navbar-light">
@@ -155,7 +156,7 @@
          tabindex="-1"
       >
          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-success">
+            <div class="modal-content">
                <div class="modal-header">
                   <h5 class="modal-title" id="loginRegisterModalToggleLabel">
                      Login
@@ -167,7 +168,7 @@
                      aria-label="Close"
                   ></button>
                </div>
-               <form class="modal-body login__form bg-success">
+               <form class="modal-body login__form">
                   <div class="mb-3">
                      <label for="loginInputEmail" class="form-label"
                         >Email address</label
@@ -203,7 +204,7 @@
                   </div>
                </form>
                <div
-                  class="modal-footer justify-content-center align-items-center bg-success error__login"
+                  class="modal-footer justify-content-center align-items-center error__login"
                ></div>
                <div>
                   <button
@@ -226,7 +227,7 @@
          tabindex="-1"
       >
          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-success">
+            <div class="modal-content">
                <div class="modal-header">
                   <h5 class="modal-title" id="registerModalToggleLabel">
                      Register User
@@ -238,7 +239,7 @@
                      aria-label="Close"
                   ></button>
                </div>
-               <form class="modal-body register__form bg-success">
+               <form class="modal-body register__form">
                   <div class="mb-3">
                      <label for="registerInputEmail" class="form-label"
                         >Email address</label
@@ -287,7 +288,7 @@
                   </div>
                </form>
                <div
-                  class="modal-footer justify-content-center align-items-center bg-success error__register"
+                  class="modal-footer justify-content-center align-items-center error__register"
                ></div>
                <div>
                   <button
@@ -375,10 +376,10 @@
          </div>
       </section>
       <section class="mt-5">
-         <div class="container-lg">
+         <div class="container-lg mb-5">
             <div class="row">
                <div class="col-12 mb-2">
-                  <h2 class="text-success fw-light">Your listings</h2>
+                  <h2 class="text-success">Your listings</h2>
                   <div class="text-center spinner-container--mylisting">
                      <div
                         class="spinner-border text-secondary"
@@ -390,7 +391,9 @@
                   </div>
                </div>
             </div>
-            <div class="row container__yours--listings"></div>
+            <div class="row container__yours--listings">
+               <h3 class="fw-light mb-5">You dont have noe listing</h3>
+            </div>
          </div>
       </section>
    </body>

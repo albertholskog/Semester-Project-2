@@ -51,21 +51,21 @@ export async function listingsEntryApiCall() {
       const bidName = element.bids;
 
       if (element.media.length === 0) {
-         carouselItem.innerHTML += `   <div class="carousel-item active h-100">
+         carouselItem.innerHTML += `   <div class="carousel-item active h-100 ">
                                           <img
                                              src="../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg"
                                              onerror="this.src = '../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
-                                             class="carousel__prod shadow"
+                                             class="carousel__prod "
                                              alt="product image for ${element.title}"
                                           />
                                        </div>`;
       } else {
          for (let i = 0; i < element.media.length; i++) {
-            carouselItem.innerHTML += `   <div class="carousel-item active h-100">
+            carouselItem.innerHTML += `   <div class="carousel-item active h-100 ">
                                        <img
                                           src="${element.media[i]}"
                                           onerror="this.src = '../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
-                                          class="carousel__prod"
+                                          class="carousel__prod "
                                           alt="product image for ${element.title}"
                                        />
                                     </div>`;

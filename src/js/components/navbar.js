@@ -10,14 +10,14 @@ export function updatenavbar() {
       navbarlinks.innerHTML = ` <ul class="navbar-nav">
                                     <li class="nav-item">
                                         <a
-                                            class="nav-link text-center text-success mx-lg-2 fs-5 fw-light"
+                                            class="nav-link text-center text-success mx-lg-2 fs-5 "
                                             href="/index.html"
                                             >Home</a
                                         >
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a 
-                                            class="nav-link dropdown-toggle text-center text-success mx-lg-2 fs-5 fw-light"
+                                            class="nav-link dropdown-toggle text-center text-success mx-lg-2 fs-5 "
                                             href="#"
                                             id="navbarDropdown"
                                             role="button"
@@ -45,7 +45,7 @@ export function updatenavbar() {
                                     </li>
                                     <li class="nav-item">
                                         <a
-                                            class="nav-link text-center  mb-4 mb-lg-0 text-success fs-5 fw-light "
+                                            class="nav-link text-center  mb-4 mb-lg-0 text-success fs-5 "
                                             data-bs-toggle="modal"
                                             data-bs-target="#createlistingModal"
                                             type="button"
@@ -60,14 +60,14 @@ export function updatenavbar() {
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
                                         <a
-                                            class="nav-link text-center text-success mx-lg-2 fs-5 fw-light"
+                                            class="nav-link text-center text-success mx-lg-2 fs-5"
                                             href="/index.html"
                                             >Home</a
                                         >
                                     </li>
                                     <li class="nav-item ">
                                         <a
-                                            class="nav-link  text-center text-success mx-lg-2 fs-5 fw-light "
+                                            class="nav-link  text-center text-success mx-lg-2 fs-5 "
                                             href="#loginRegisterModalToggle"
                                             id="navbarDropdown"
                                             role="button"

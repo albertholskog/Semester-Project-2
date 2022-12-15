@@ -14,7 +14,10 @@ export async function myListingsApiCall() {
 
    try {
       const jsonData = await apiCall(profillistingsUrl, "GET", token);
-
+      console.log(jsonData.length);
+      if (jsonData.length >= 1) {
+         containerMyListing.innerHTML = "";
+      }
       for (let i = 0; i < jsonData.length; i++) {
          const element = jsonData[i];
          const [

@@ -1,12 +1,12 @@
 export function prodBidInnerHtml(container, bid = 0, day, hour, min, sec) {
    return (container.innerHTML = `
-                                        <h3 class="fs-4 text-success fw-light text-center">
+                                        <h3 class="fs-4 text-success  text-center">
                                             Current Bid: 
                                         </h3>
                                         <h3 class="fs-4 text-success fw-light text-center">
-                                                ${bid}
+                                                ${bid} Credit
                                         </h3>
-                                        <h3 class="fs-4 text-success fw-light text-center mt-3 ">
+                                        <h3 class="fs-4 text-success  text-center mt-3 ">
                                             Time remaining:
                                         </h3>
                                         <h3 class="fs-4 text-success fw-light text-center">
@@ -19,7 +19,7 @@ export function prodBidInnerHtml(container, bid = 0, day, hour, min, sec) {
 
 export function prodInfoInnerHtml(container, element) {
    return (container.innerHTML = `   <div>
-                                        <p class="text-success fw-light m-1 fs-3">
+                                        <p class="text-success m-1 fs-4">
                                         ${element.title} 
                                         </p>
                                         <p class="text-success fw-light m-1">

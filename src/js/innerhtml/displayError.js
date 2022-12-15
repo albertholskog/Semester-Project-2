@@ -1,3 +1,3 @@
 export function displayErrorMessage(message = "Unkonown Error has occurred") {
-   return `<div class="Error text-center bg-success text-err fs-2"> ${message} </div>`;
+   return `<div class="Error text-center  text-err fs-2"> ${message} </div>`;
 }
