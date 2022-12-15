@@ -54,7 +54,7 @@ export async function listingsEntryApiCall() {
          carouselItem.innerHTML += `   <div class="carousel-item active h-100 ">
                                           <img
                                              src="../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg"
-                                             onerror="this.src = '../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
+                                             onerror="this.src ='./image/errorimg.jpg';"
                                              class="carousel__prod "
                                              alt="product image for ${element.title}"
                                           />
@@ -64,7 +64,7 @@ export async function listingsEntryApiCall() {
             carouselItem.innerHTML += `   <div class="carousel-item active h-100 ">
                                        <img
                                           src="${element.media[i]}"
-                                          onerror="this.src = '../image/paul-volkmer-qVotvbsuM_c-unsplash.jpg';"
+                                          onerror="this.src ='./image/errorimg.jpg';"
                                           class="carousel__prod "
                                           alt="product image for ${element.title}"
                                        />
