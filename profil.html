@@ -2,7 +2,7 @@
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
-      <meta name="description" content="Home page for Bid it" />
+      <meta name="description" content="Profil page for bid it" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="/css/styles.css" />
@@ -21,10 +21,10 @@
          rel="stylesheet"
       />
       <script src="/src/js/script.js" type="module"></script>
-      <script src="/src/js/index.js" type="module"></script>
-      <title>Home Bid it</title>
+      <script src="/src/js/profil.js" type="module"></script>
+      <title>Profil page</title>
    </head>
-   <body class="bg-primary">
+   <body class="bg-primary d-flex flex-column justify-content-between">
       <nav class="navbar navbar-expand-lg navbar-light">
          <div class="container-lg">
             <a class="navbar-brand" href="/index.html"
@@ -77,7 +77,6 @@
                   <div class="mb-3">
                      <label for="titleInput" class="form-label">Title*</label>
                      <input
-                        data-cy="listing-title"
                         required
                         type="text"
                         name="title"
@@ -90,7 +89,6 @@
                         >Description</label
                      >
                      <textarea
-                        data-cy="listing-description"
                         name="description"
                         class="form-control"
                         id="descriptionInput"
@@ -100,7 +98,6 @@
                   <div class="mb-3">
                      <label for="imageUrlInput" class="form-label">Image</label>
                      <input
-                        data-cy="listing-media"
                         placeholder="https://example.com.jpg"
                         name="media"
                         type="text"
@@ -108,7 +105,6 @@
                         id="imageUrlInput1"
                      />
                      <input
-                        data-cy="listing-media-2"
                         placeholder="https://example.com.jpg"
                         name="media"
                         type="text"
@@ -116,7 +112,6 @@
                         id="imageUrlInput2"
                      />
                      <input
-                        data-cy="listing-media-3"
                         placeholder="https://example.com.jpg"
                         name="media"
                         type="text"
@@ -127,7 +122,6 @@
                   <div class="mb-3">
                      <label for="dataInput" class="form-label">Date*</label>
                      <input
-                        data-cy="listing-date"
                         required
                         name="endsAt"
                         type="datetime-local"
@@ -137,7 +131,6 @@
                   </div>
                   <div class="d-flex justify-content-center align-items-center">
                      <button
-                        data-cy="listing-btn"
                         type="submit"
                         class="btn btn-secondary rounded-circle shadow btn__size--reguler"
                      >
@@ -181,7 +174,6 @@
                         >Email address</label
                      >
                      <input
-                        data-cy="login-email"
                         name="email"
                         type="email"
                         class="form-control"
@@ -195,7 +187,6 @@
                         >Password</label
                      >
                      <input
-                        data-cy="login-password"
                         name="password"
                         type="password"
                         class="form-control"
@@ -205,7 +196,6 @@
                   </div>
                   <div class="d-flex justify-content-center modal-footer">
                      <button
-                        data-cy="login-btn"
                         type="submit"
                         class="btn bg-secondary rounded-circle shadow btn__size--reguler"
                      >
@@ -313,64 +303,98 @@
             </div>
          </div>
       </div>
-
-      <!-- Img of the newst products -->
-      <section class="mt-5">
-         <div class="container-lg">
-            <div class="row justify-content-center align-items-center">
-               <div class="col-12 col-sm-6">
-                  <h2 class="mb-3 text-success text-center text-sm-start">
-                     Welcome to Bid:it
-                  </h2>
-                  <p class="text-success fw-light">
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                     Quidem reprehenderit temporibus nesciunt, nihil corporis
-                     rem consequatur, quae, soluta minus aperiam veniam modi
-                     quaerat aspernatur eaque praesentium quibusdam recusandae
-                     doloremque cum.
-                  </p>
+      <!-- update avatar module -->
+      <div
+         class="modal fade"
+         id="ProfilUpdateModal"
+         tabindex="-1"
+         aria-labelledby="modal-title"
+         aria-hidden="true"
+      >
+         <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="modal-title">
+                     Update your profil image
+                  </h5>
+                  <button
+                     class="btn-close"
+                     type="button"
+                     data-bs-dismiss="modal"
+                     aria-label="close"
+                  ></button>
                </div>
-               <div class="col-12 col-sm-6 text-end">
-                  <img src="/image/hammer.svg" class="img-fluid test" alt="" />
+               <form
+                  class="modal-body d-flex flex-column justify-content-center align-items-center form__update--avatar"
+               >
+                  <label for="profil-update" class="form-label">
+                     Url for your new Profil image:</label
+                  >
+                  <input
+                     type="text"
+                     name="avatar"
+                     class="form-label my-3"
+                     id="profil-update"
+                     placeholder="Url"
+                  /><button
+                     type="submit"
+                     class="btn btn-secondary btn__profil rounded-circle shadow btn__size--reguler mb-5"
+                  >
+                     Update
+                  </button>
+               </form>
+            </div>
+         </div>
+      </div>
+      <section class="mt-5">
+         <div class="container-lg bg-light py-3 rounded-1 shadow">
+            <div class="row container__error--display">
+               <div class="text-center spinner-container">
+                  <div
+                     class="spinner-border text-secondary"
+                     role="status"
+                     id="spinner"
+                  >
+                     <span class="visually-hidden">Loading...</span>
+                  </div>
+               </div>
+               <div class="col-12 col-md-6 container__avatar text-center"></div>
+               <div class="col-12 col-md-6 align-self-center">
+                  <div class="container__profil--info"></div>
+                  <div class="text-center">
+                     <button
+                        type="button"
+                        class="btn btn-secondary btn__profil rounded-circle shadow btn__size--reguler mt-4"
+                        data-bs-toggle="modal"
+                        data-bs-target="#ProfilUpdateModal"
+                     >
+                        Update avatar
+                     </button>
+                  </div>
                </div>
             </div>
          </div>
       </section>
-      <!-- New Products -->
       <section class="mt-5">
-         <div class="container-lg">
-            <form class="container__search col-12 col-sm-6">
-               <div class="text-center text-sm-start">
-                  <h2 class="text-success fw-light mb-3">Search on listings</h2>
+         <div class="container-lg mb-5">
+            <div class="row">
+               <div class="col-12 mb-2">
+                  <h2 class="text-success">Your listings</h2>
+                  <div class="text-center spinner-container--mylisting">
+                     <div
+                        class="spinner-border text-secondary"
+                        role="status"
+                        id="spinner"
+                     >
+                        <span class="visually-hidden">Loading...</span>
+                     </div>
+                  </div>
                </div>
-               <input
-                  name="search"
-                  class="form-control search__bar"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-               />
-            </form>
-         </div>
-      </section>
-      <section class="my-5 pb-5">
-         <div class="text-center spinner-container">
-            <div
-               class="spinner-border text-secondary"
-               role="status"
-               id="spinner"
-            >
-               <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="row container__yours--listings">
+               <h3 class="fw-light mb-5">You dont have noe listing</h3>
             </div>
          </div>
-         <div class="container-lg">
-            <div class="row container__card"></div>
-         </div>
-         <button
-            class="btn btn-round btn-lg bg-secondary mx-auto mt-3 d-block rounded-circle shadow btn__size--reguler btn__seemore"
-         >
-            See more
-         </button>
       </section>
    </body>
 </html>

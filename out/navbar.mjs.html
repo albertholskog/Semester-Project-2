@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <title>JSDoc: Source: navbar.mjs</title>
+
+      <script src="scripts/prettify/prettify.js"></script>
+      <script src="scripts/prettify/lang-css.js"></script>
+      <!--[if lt IE 9]>
+         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+      <link
+         type="text/css"
+         rel="stylesheet"
+         href="styles/prettify-tomorrow.css"
+      />
+      <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css" />
+   </head>
+
+   <body>
+      <div id="main">
+         <h1 class="page-title">Source: navbar.mjs</h1>
+
+         <section>
+            <article>
+               <pre
+                  class="prettyprint source linenums"
+               ><code>import { token } from "./localstorage.mjs";
+
+
+/**
+ * updatenavbar checks if the user has a token, if he does then navbar will update itself
+ */
+
+
+export function updatenavbar() {
+   const navbarlinks = document.querySelector(".container__navbar--link");
+   if (token !== null) {
+      navbarlinks.innerHTML = ` &lt;ul class="navbar-nav">
+                                    &lt;li class="nav-item">
+                                        &lt;a
+                                            class="nav-link text-center text-success mx-lg-2 fs-5 fw-light"
+                                            href="/index.html"
+                                            >Home&lt;/a
+                                        >
+                                    &lt;/li>
+                                    &lt;li class="nav-item dropdown">
+                                        &lt;a
+                                            class="nav-link dropdown-toggle text-center text-success mx-lg-2 fs-5 fw-light"
+                                            href="#"
+                                            id="navbarDropdown"
+                                            role="button"
+                                            data-bs-toggle="dropdown"
+                                            aria-expanded="false"
+                                        >
+                                            Profile
+                                        &lt;/a>
+                                        &lt;ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            &lt;li>
+                                            &lt;a
+                                                class="dropdown-item text-center"
+                                                href="/profil.html"
+                                                >My Profile&lt;/a
+                                            >
+                                            &lt;/li>
+                                            &lt;li>&lt;hr class="dropdown-divider"/>&lt;/li>
+                                            &lt;li class="d-flex justify-content-center">
+                                            &lt;a class="dropdown-item text-center logout__btn" href="#"
+                                                >Logout&lt;/a
+                                            >
+                                            &lt;/li>
+                                        &lt;/ul>
+                                    &lt;/li>
+                                    &lt;li class="nav-item">
+                                        &lt;a
+                                            class="nav-link text-center  mb-4 mb-lg-0 text-success fs-5 fw-light "
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#createlistingModal"
+                                            type="button"
+                                            href="/createlisting.html"
+                                            >Create listing&lt;/a
+                                        >
+                                    &lt;/li>
+                                &lt;/ul>`;
+   } else {
+      navbarlinks.innerHTML += `
+                                &lt;ul class="navbar-nav">
+                                    &lt;li class="nav-item">
+                                        &lt;a
+                                            class="nav-link text-center text-success mx-lg-2 fs-5 fw-light"
+                                            href="/index.html"
+                                            >Home&lt;/a
+                                        >
+                                    &lt;/li>
+                                    &lt;li class="nav-item ">
+                                        &lt;a
+                                            class="nav-link  text-center text-success mx-lg-2 fs-5 fw-light"
+                                            href="#loginRegisterModalToggle"
+                                            id="navbarDropdown"
+                                            role="button"
+                                            data-bs-toggle="modal"
+                                            
+                                        >
+                                            Login
+                                        &lt;/a>
+                                    &lt;/li>
+                                &lt;/ul>`;
+   }
+}
+</code></pre>
+            </article>
+         </section>
+      </div>
+
+      <nav>
+         <h2><a href="index.html">Home</a></h2>
+         <h3>Global</h3>
+         <ul>
+            <li><a href="global.html#apiCall">apiCall</a></li>
+            <li>
+               <a href="global.html#getAllListingApiCall"
+                  >getAllListingApiCall</a
+               >
+            </li>
+            <li><a href="global.html#loginApiCall">loginApiCall</a></li>
+            <li><a href="global.html#makeBid">makeBid</a></li>
+            <li><a href="global.html#sortArray">sortArray</a></li>
+            <li><a href="global.html#sortlistArr">sortlistArr</a></li>
+            <li><a href="global.html#timeformat">timeformat</a></li>
+            <li><a href="global.html#updatenavbar">updatenavbar</a></li>
+         </ul>
+      </nav>
+
+      <br class="clear" />
+
+      <footer>
+         Documentation generated by
+         <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Wed Dec 14
+         2022 13:28:57 GMT+0100 (Central European Standard Time)
+      </footer>
+
+      <script>
+         prettyPrint();
+      </script>
+      <script src="scripts/linenumber.js"></script>
+   </body>
+</html>
