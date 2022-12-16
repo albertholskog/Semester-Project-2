@@ -49,11 +49,9 @@ export async function loginApiCall() {
             emailVali(formDataSeri.email) &&
             formDataSeri.password.length > 7
          ) {
-            console.log(1);
             const jsonData = await apiCall(loginUrl, "POST", "", formDataSeri);
-            console.log(jsonData);
+
             if (jsonData.ok) {
-               console.log("respons ok");
                const accessToken = jsonData.accessToken;
                const userName = jsonData.name;
                const credit = jsonData.credits;
@@ -65,7 +63,6 @@ export async function loginApiCall() {
                   window.location.reload();
                }, 200);
             } else {
-               console.log("ikke godkjent");
                errorResponsContainer.innerHTML = displayErrorMessage(
                   "Email or password is incorrect"
                );
@@ -76,7 +73,6 @@ export async function loginApiCall() {
             }
          }
       } catch (error) {
-         console.log(3);
          errorResponsContainer.innerHTML = displayErrorMessage();
       }
    });

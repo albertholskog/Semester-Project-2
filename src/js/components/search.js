@@ -21,7 +21,6 @@ export async function searchApiCall() {
    try {
       searchArray = await apiCall(getAllListingUrl, "GET");
    } catch (error) {
-      console.log("error search api call");
       containerSearch.innerHTML = displayErrorMessage(
          "Search result error occurred"
       );

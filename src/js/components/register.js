@@ -66,12 +66,11 @@ export async function registerUser() {
                "",
                formDataSeri
             );
-            console.log("1");
+
             if (jsonData.ok) {
                errorContainerRegister.innerHTML = "";
                approvedContainerRegister.innerHTML =
                   "User was successfully created";
-               console.log(jsonData);
             } else {
                errorContainerRegister.innerHTML = displayErrorMessage(
                   "User may already be registered"

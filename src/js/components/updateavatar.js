@@ -1,32 +1,40 @@
 import { updateAvatarUrl } from "../url.js";
 import { token } from "./localstorage.js";
 import { apiCall } from "./apiCall.js";
+import { displayErrorMessage } from "../innerhtml/displayError.js";
 
 const formUpdateAvatar = document.querySelector(".form__update--avatar");
-console.log(formUpdateAvatar);
+const errorAvatar = document.querySelector(".error__avatar");
 
 export async function updateavatar() {
    formUpdateAvatar.addEventListener("submit", async (e) => {
       e.preventDefault();
       const formData = new FormData(formUpdateAvatar);
       const formDataSeri = Object.fromEntries(formData);
-      console.log(formDataSeri);
-
       try {
-         const jsonData = await apiCall(
-            updateAvatarUrl,
-            "PUT",
-            token,
-            formDataSeri
-         );
-
-         return jsonData;
+         if (formDataSeri.avatar !== "") {
+            const jsonData = await apiCall(
+               updateAvatarUrl,
+               "PUT",
+               token,
+               formDataSeri
+            );
+            if (jsonData.ok) {
+               setTimeout(() => {
+                  window.location.reload();
+               }, 200);
+            } else {
+               errorAvatar.innerHTML = displayErrorMessage(
+                  "Need to have valid url link"
+               );
+            }
+         } else {
+            errorAvatar.innerHTML = displayErrorMessage(
+               "Need to have valid url link"
+            );
+         }
       } catch (error) {
-         console.log(error);
-      } finally {
-         setTimeout(() => {
-            window.location.reload();
-         }, "200");
+         errorAvatar.innerHTML = displayErrorMessage();
       }
    });
 }

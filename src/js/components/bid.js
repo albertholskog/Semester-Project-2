@@ -18,26 +18,25 @@ export async function makeBid() {
    formBid.addEventListener("submit", async (e) => {
       e.preventDefault();
       const currentArr = await listingsEntryApiCall();
-      console.log(currentArr);
+
       const amountValue = bidInput.value;
       const amountNum = Number(amountValue);
       const bidAmount = { amount: amountNum };
-      console.log(amountNum);
+
       const creditNum = parseFloat(credit);
 
       if (currentArr.length >= 1) {
          const currentBid = currentArr.pop().amount;
-         console.log(currentBid);
+
          try {
             if (amountNum <= creditNum && amountNum > currentBid) {
                apiCall(bidUrl, "POST", token, bidAmount);
-               console.log("inni første");
+
                creditCheckApiCall();
                setTimeout(() => {
                   window.location.reload();
                }, 500);
             } else {
-               console.log("ute");
                bidInput.classList.add("border-err");
                errorBid.innerHTML = `Bid must be higher than the current bid`;
             }
@@ -48,13 +47,12 @@ export async function makeBid() {
          try {
             if (amountNum <= creditNum && amountNum > 0) {
                apiCall(bidUrl, "POST", token, bidAmount);
-               console.log("inni 2");
+
                creditCheckApiCall();
                setTimeout(() => {
                   window.location.reload();
                }, 500);
             } else {
-               console.log("ute 2");
                bidInput.classList.add("border-err");
                errorBid.innerHTML = `Bid must be higher than the current bid`;
             }

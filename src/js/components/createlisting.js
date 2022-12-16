@@ -15,16 +15,10 @@ export async function createListingApiCall() {
       const media = formData.getAll("media");
       const endsAt = formData.get("endsAt");
       const timeString = new Date(endsAt).toISOString();
-      console.log(timeString);
-      console.log(title);
-      console.log(description);
-      console.log(media);
-      console.log(endsAt);
 
       const filterMedia = media.filter(function (nomedia) {
          return nomedia;
       });
-      console.log(filterMedia);
 
       const listingObj = {
          title: title,
@@ -32,15 +26,12 @@ export async function createListingApiCall() {
          media: filterMedia,
          endsAt: timeString,
       };
-      console.log(listingObj);
 
       try {
          await apiCall(createListingUrl, "POST", token, listingObj);
          setTimeout(() => {
             window.location.reload();
-         }, "200");
-
-         // return jsonData;
+         }, 500);
       } catch (error) {
          console.log(error);
       }

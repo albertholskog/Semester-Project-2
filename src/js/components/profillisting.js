@@ -14,7 +14,7 @@ export async function myListingsApiCall() {
 
    try {
       const jsonData = await apiCall(profillistingsUrl, "GET", token);
-      console.log(jsonData.length);
+
       if (jsonData.length >= 1) {
          containerMyListing.innerHTML = "";
       }
@@ -38,7 +38,6 @@ export async function myListingsApiCall() {
       }
       spinner.innerHTML = "";
    } catch (error) {
-      console.log(error);
       containerMyListing.innerHTML = displayErrorMessage(
          "Failed to load your listings"
       );

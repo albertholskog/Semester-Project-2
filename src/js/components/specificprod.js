@@ -24,7 +24,6 @@ export async function listingsEntryApiCall() {
 
    try {
       const element = await apiCall(listingsEntryUrl, "GET");
-      console.log(element);
       if (element.seller.name === userName) {
          const formBid = document.querySelector(".form__bid");
          formBid.innerHTML = "";
@@ -100,7 +99,6 @@ export async function listingsEntryApiCall() {
                                                 </div>`;
          }
       } else {
-         console.log("5");
          prodBidInnerHtml(
             containerBidCurrent,
             0,
@@ -118,7 +116,6 @@ export async function listingsEntryApiCall() {
       spinner.innerHTML = "";
       return bidName;
    } catch (error) {
-      console.log(error);
       const errorMessageContainer = document.querySelector(".error__container");
 
       errorMessageContainer.innerHTML = displayErrorMessage();

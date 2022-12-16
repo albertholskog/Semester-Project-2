@@ -2,6 +2,7 @@ import { apiCall } from "./apiCall.js";
 import { getAllListingUrl } from "../url.js";
 import { timeformat } from "./timeformat.js";
 import { cardInnerHTML } from "../innerhtml/innerhtmlcard.js";
+import { displayErrorMessage } from "../innerhtml/displayError.js";
 
 export async function seeMoreApiCall() {
    const btnSeeMore = document.querySelector(".btn__seemore");
@@ -48,7 +49,7 @@ export async function seeMoreApiCall() {
          }
          btnSeeMore.innerHTML = "";
       } catch (error) {
-         console.log(error);
+         cardContainer.innerHTML = displayErrorMessage();
       }
    });
 }

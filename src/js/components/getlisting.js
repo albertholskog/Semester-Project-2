@@ -55,7 +55,6 @@ export async function getAllListingApiCall() {
 
       spinner.innerHTML = "";
    } catch (error) {
-      console.log(error);
       cardContainer.innerHTML = displayErrorMessage("Api faild to get listing");
    }
 }

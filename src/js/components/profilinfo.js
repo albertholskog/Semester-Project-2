@@ -25,7 +25,6 @@ export async function profilApiCall() {
 
       spinner.innerHTML = "";
    } catch (error) {
-      console.log(error);
       errorContainer.innerHTML = displayErrorMessage(
          "Can't access the api call to retrieve profile information "
       );
