@@ -45,32 +45,38 @@ export async function loginApiCall() {
       }
 
       try {
-         const jsonData = await apiCall(loginUrl, "POST", "", formDataSeri);
-         console.log(jsonData);
-         if (jsonData.ok) {
-            console.log("respons ok");
-            const accessToken = jsonData.accessToken;
-            const userName = jsonData.name;
-            const credit = jsonData.credits;
+         if (
+            emailVali(formDataSeri.email) &&
+            formDataSeri.password.length > 7
+         ) {
+            console.log(1);
+            const jsonData = await apiCall(loginUrl, "POST", "", formDataSeri);
+            console.log(jsonData);
+            if (jsonData.ok) {
+               console.log("respons ok");
+               const accessToken = jsonData.accessToken;
+               const userName = jsonData.name;
+               const credit = jsonData.credits;
 
-            localStorage.setItem("credit", credit);
-            localStorage.setItem("userName", userName);
-            localStorage.setItem("accessToken", accessToken);
-            setTimeout(() => {
-               window.location.reload();
-            }, 200);
-         } else {
-            // const errormessage = jsonData.errors.message;
-            // console.log(errormessage);
-            errorResponsContainer.innerHTML = displayErrorMessage(
-               "Email or password is incorrect"
-            );
-            loginInputPassword.classList.remove("border-green");
-            loginInputPassword.classList.add("border-err");
+               localStorage.setItem("credit", credit);
+               localStorage.setItem("userName", userName);
+               localStorage.setItem("accessToken", accessToken);
+               setTimeout(() => {
+                  window.location.reload();
+               }, 200);
+            } else {
+               console.log("ikke godkjent");
+               errorResponsContainer.innerHTML = displayErrorMessage(
+                  "Email or password is incorrect"
+               );
+               loginInputPassword.classList.remove("border-green");
+               loginInputPassword.classList.add("border-err");
+               loginInputEmail.classList.remove("border-green");
+               loginInputEmail.classList.add("border-err");
+            }
          }
-
-         console.log(jsonData);
       } catch (error) {
+         console.log(3);
          errorResponsContainer.innerHTML = displayErrorMessage();
       }
    });

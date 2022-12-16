@@ -31,7 +31,7 @@ export function updatenavbar() {
                                             <li>
                                             <a data-cy="my-profil"
                                                 class="dropdown-item text-center"
-                                                href="/profil.html"
+                                                href="./profil.html"
                                                 >My Profile</a
                                             >
                                             </li>

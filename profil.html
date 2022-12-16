@@ -27,7 +27,7 @@
    </head>
    <body class="bg-primary d-flex flex-column justify-content-between">
       <nav class="navbar navbar-expand-lg navbar-light">
-         <div class="container-lg">
+         <div class="container-lg mt-3">
             <a class="navbar-brand" href="./index.html"
                ><h1 class="text-success">
                   BID<span class="text-secondary">:</span>IT
@@ -78,6 +78,7 @@
                   <div class="mb-3">
                      <label for="titleInput" class="form-label">Title*</label>
                      <input
+                        data-cy="listing-title"
                         required
                         type="text"
                         name="title"
@@ -90,6 +91,7 @@
                         >Description</label
                      >
                      <textarea
+                        data-cy="listing-description"
                         name="description"
                         class="form-control"
                         id="descriptionInput"
@@ -99,6 +101,7 @@
                   <div class="mb-3">
                      <label for="imageUrlInput" class="form-label">Image</label>
                      <input
+                        data-cy="listing-media"
                         placeholder="https://example.com.jpg"
                         name="media"
                         type="text"
@@ -106,6 +109,7 @@
                         id="imageUrlInput1"
                      />
                      <input
+                        data-cy="listing-media-2"
                         placeholder="https://example.com.jpg"
                         name="media"
                         type="text"
@@ -113,6 +117,7 @@
                         id="imageUrlInput2"
                      />
                      <input
+                        data-cy="listing-media-3"
                         placeholder="https://example.com.jpg"
                         name="media"
                         type="text"
@@ -123,6 +128,7 @@
                   <div class="mb-3">
                      <label for="dataInput" class="form-label">Date*</label>
                      <input
+                        data-cy="listing-date"
                         required
                         name="endsAt"
                         type="datetime-local"
@@ -132,6 +138,7 @@
                   </div>
                   <div class="d-flex justify-content-center align-items-center">
                      <button
+                        data-cy="listing-btn"
                         type="submit"
                         class="btn btn-secondary rounded-circle shadow btn__size--reguler"
                      >
@@ -175,6 +182,7 @@
                         >Email address</label
                      >
                      <input
+                        data-cy="login-email"
                         name="email"
                         type="email"
                         class="form-control"
@@ -188,6 +196,7 @@
                         >Password</label
                      >
                      <input
+                        data-cy="login-password"
                         name="password"
                         type="password"
                         class="form-control"
@@ -197,6 +206,7 @@
                   </div>
                   <div class="d-flex justify-content-center modal-footer">
                      <button
+                        data-cy="login-btn"
                         type="submit"
                         class="btn bg-secondary rounded-circle shadow btn__size--reguler"
                      >
@@ -290,6 +300,9 @@
                </form>
                <div
                   class="modal-footer justify-content-center align-items-center error__register"
+               ></div>
+               <div
+                  class="modal-footer justify-content-center align-items-center approved__register"
                ></div>
                <div>
                   <button
@@ -393,7 +406,7 @@
                </div>
             </div>
             <div class="row container__yours--listings">
-               <h3 class="fw-light mb-5">You dont have noe listing</h3>
+               <h3 class="fw-light mb-5">You don't have any listings</h3>
             </div>
          </div>
       </section>

@@ -3,3 +3,9 @@ export function emailVali(email) {
    const emailMatch = regEx.test(email);
    return emailMatch;
 }
+export function nameVali(e) {
+   const regEx = /^[A-Za-z0-9_]*$/;
+
+   const nameMatch = regEx.test(e);
+   return nameMatch;
+}

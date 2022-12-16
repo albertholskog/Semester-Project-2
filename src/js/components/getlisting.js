@@ -17,7 +17,7 @@ export async function getAllListingApiCall() {
       const jsonData = await apiCall(getAllListingUrl, "GET");
       for (let i = 0; i < 9; i++) {
          const element = jsonData[i];
-         console.log(element);
+
          sortArray(element.bids);
          const [
             daysRemaining,

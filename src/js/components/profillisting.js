@@ -40,7 +40,7 @@ export async function myListingsApiCall() {
    } catch (error) {
       console.log(error);
       containerMyListing.innerHTML = displayErrorMessage(
-         "Faild to load in your listings"
+         "Failed to load your listings"
       );
    }
 }

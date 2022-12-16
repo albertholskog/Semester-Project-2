@@ -1,7 +1,7 @@
 export function prodBidInnerHtml(container, bid = 0, day, hour, min, sec) {
    return (container.innerHTML = `
                                         <h3 class="fs-4 text-success  text-center">
-                                            Current Bid: 
+                                        Highest bid: 
                                         </h3>
                                         <h3 class="fs-4 text-success fw-light text-center">
                                                 ${bid} Credit
