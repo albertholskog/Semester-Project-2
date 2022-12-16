@@ -11,7 +11,8 @@
       "prepare": "husky install",
       "test-e2e": "cypress open",
       "test-e2e-cli": "cypress run",
-      "docs": "jsdoc -c ./conf.json -r"
+      "docs": "jsdoc -c ./conf.json -r",
+      "start": "live-server"
    },
    "repository": {
       "type": "git",
@@ -36,7 +37,8 @@
       "jsdoc": "^4.0.0",
       "lint-staged": "^13.0.3",
       "prettier": "^2.7.1",
-      "sass": "^1.56.1"
+      "sass": "^1.56.1",
+      "live-server": "^1.2.2"
    },
    "lint-staged": {
       "*.js": [
@@ -55,8 +57,9 @@
       ]
    },
    "dependencies": {
-      "bootstrap-icons": "^1.10.2",
-      "bootstrap": "^5.2.0"
+      "bootstrap": "^5.2.0",
+      "bootstrap-icons": "^1.10.2"
+      
    },
    "jest": {
       "resetMocks": false,
