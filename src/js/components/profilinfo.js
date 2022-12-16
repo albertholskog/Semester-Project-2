@@ -17,7 +17,7 @@ export async function profilApiCall() {
                                        class="rounded-circle avatar__img shadow"
                                        src="${element.avatar}"
                                        onerror="this.src ='./image/errorimg.jpg';"
-                                       alt=""
+                                       alt="${element.name} avatar image"
                                     />`;
       containerProfilInfo.innerHTML += `<h4 class="mt-3 text-center text-success fw-light">${element.name}</h4>
                                        <h4 class="mt-4 text-center text-success fw-light">Credit:</h4>
