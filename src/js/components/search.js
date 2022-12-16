@@ -53,17 +53,28 @@ function showSearchResult(result) {
                     <span class="text-success fw-light">${secondRemaining}s </span>                    
 
                     </h4>
-                <div class="card-body position-relative bg-light rounded-bottom ">
-                    <a href="./specificprod.html?id=${element.id}"
-                    class="btn btn-secondary btn__card position-absolute top-0 start-50 translate-middle rounded-circle shadow"
-                    ><span class="position-absolute top-50 start-50 translate-middle  fs-4"> BID</span>
+                    <div
+                    class="card-body position-relative bg-light rounded-bottom border-top border-secondary border-4"
+                 >
+                    <a
+                       href="./specificprod.html?id=${element.id}"
+                       class="btn btn-secondary btn__card position-absolute top-0 start-50 translate-middle rounded-circle shadow"
+                       ><span
+                          class="position-absolute top-50 start-50 translate-middle fs-4"
+                       >
+                          BID</span
+                       >
                     </a>
-                    <h3 class="card-title text-center mt-4 text-success fw-light">${
-                       element.title
-                    }</h3>
-                    <p class="card-text text-center fs-5 text-success fw-light mt-2 m-0 ">Highest bid</p>
-                    <p class="card-text text-center fs-5 text-success fw-light">${0} Credit</p>
-                </div>
+                    <h3 class="card-title text-center mt-4 text-success fw-light">
+                       ${element.title}
+                    </h3>
+                    <p class="card-text text-center fs-5 text-success fw-light mt-2 m-0">
+                       Highest bid
+                    </p>
+                    <p class="card-text text-center fs-5 text-success fw-light">
+                       ${0} Credit
+                    </p>
+                 </div>
             </div>
         </div>`;
          } else {
@@ -85,14 +96,27 @@ function showSearchResult(result) {
                                  <span class="text-success fw-light">${secondRemaining}s </span>                    
 
                                  </h4>
-                              <div class="card-body position-relative bg-light rounded-bottom ">
-                                 <a href="./specificprod.html?id=${element.id}"
-                                 class="btn btn-secondary btn__card position-absolute top-0 start-50 translate-middle rounded-circle shadow"
-                                 ><span class="position-absolute top-50 start-50 translate-middle  fs-4"> BID</span>
+                                 <div
+                                 class="card-body position-relative bg-light rounded-bottom border-top border-secondary border-4"
+                              >
+                                 <a
+                                    href="./specificprod.html?id=${element.id}"
+                                    class="btn btn-secondary btn__card position-absolute top-0 start-50 translate-middle rounded-circle shadow"
+                                    ><span
+                                       class="position-absolute top-50 start-50 translate-middle fs-4"
+                                    >
+                                       BID</span
+                                    >
                                  </a>
-                                 <h3 class="card-title text-center mt-4 text-success fw-light">${element.title}</h3>
-                                 <p class="card-text text-center fs-5 text-success fw-light mt-2 m-0 ">Highest bid</p>
-                                 <p class="card-text text-center fs-5 text-success fw-light">${lastBidAmount} Credit</p>
+                                 <h3 class="card-title text-center mt-4 text-success fw-light">
+                                    ${element.title}
+                                 </h3>
+                                 <p class="card-text text-center fs-5 text-success fw-light mt-2 m-0">
+                                    Highest bid
+                                 </p>
+                                 <p class="card-text text-center fs-5 text-success fw-light">
+                                    ${lastBidAmount} Credit
+                                 </p>
                               </div>
                            </div>
                      </div>`;
