@@ -22,7 +22,7 @@ export function cardInnerHTML(
                                                 <span class="text-success fw-light">${sec}s </span>                    
 
                                                 </h4>
-                                                <div
+                                                                                 <div
                                                 class="card-body position-relative bg-light rounded-bottom border-top border-secondary border-4"
                                              >
                                                 <a
