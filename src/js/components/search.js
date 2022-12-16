@@ -54,7 +54,7 @@ function showSearchResult(result) {
 
                     </h4>
                 <div class="card-body position-relative bg-light rounded-bottom ">
-                  <a href="./specificprod.html?id=${element.id}">
+                    <a href="./specificprod.html?id=${element.id}"
                     class="btn btn-secondary btn__card position-absolute top-0 start-50 translate-middle rounded-circle shadow"
                     ><span class="position-absolute top-50 start-50 translate-middle  fs-4"> BID</span>
                     </a>
@@ -86,7 +86,7 @@ function showSearchResult(result) {
 
                                  </h4>
                               <div class="card-body position-relative bg-light rounded-bottom ">
-                                 <a href="./specificprod.html?id=${element.id}">
+                                 <a href="./specificprod.html?id=${element.id}"
                                  class="btn btn-secondary btn__card position-absolute top-0 start-50 translate-middle rounded-circle shadow"
                                  ><span class="position-absolute top-50 start-50 translate-middle  fs-4"> BID</span>
                                  </a>
