@@ -9,9 +9,15 @@ export function cardInnerHTML(
 ) {
    return (container.innerHTML += ` <div class="col-12 col-md-6 col-lg-4 mb-4 rounded-bottom">
                                         <div class="card position-relative shadow h-100 bg-ligth border-0 rounded-bottom bg-light">
-                                            <a href="./specificprod.html?id=${element.id}">
+                                            <a href="./specificprod.html?id=${
+                                               element.id
+                                            }">
                                                 <img class="card-img-top card__size--img"
-                                                src="${element.media[0]}"
+                                                src="${
+                                                   element.media.length !== 0
+                                                      ? element.media[0]
+                                                      : ""
+                                                }"
                                                 onerror="this.src ='./image/errorimg.jpg';"
                                                 alt="image of the product"/>
                                                 </a>
@@ -19,14 +25,16 @@ export function cardInnerHTML(
                                                 <span class="me-1 text-success fw-light">${day}d </span>                    
                                                 <span class="me-1 text-success fw-light">${hour}h </span>                    
                                                 <span class="me-1 text-success fw-light">${min}m </span>                    
-                                                <span class="text-success fw-light">${sec}s </span>                    
+                                                <span class="text-success fw-light">${sec}s </span> 
 
                                                 </h4>
                                                                                  <div
                                                 class="card-body position-relative bg-light rounded-bottom border-top border-secondary border-4"
                                              >
                                                 <a
-                                                   href="./specificprod.html?id=${element.id}"
+                                                   href="./specificprod.html?id=${
+                                                      element.id
+                                                   }"
                                                    class="btn btn-secondary btn__card position-absolute top-0 start-50 translate-middle rounded-circle shadow"
                                                    ><span
                                                       class="position-absolute top-50 start-50 translate-middle fs-4"

@@ -47,8 +47,7 @@ export async function getAllListingApiCall() {
                daysRemaining,
                hoursRemaining,
                minuteRemaining,
-               secondRemaining,
-               0
+               secondRemaining
             );
          }
       }

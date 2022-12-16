@@ -1,11 +1,12 @@
 import { apiCall } from "./apiCall.js";
 import { createListingUrl } from "../url.js";
 import { token } from "./localstorage.js";
+import { displayErrorMessage } from "../innerhtml/displayError.js";
 
 export async function createListingApiCall() {
    const formCreateListing = document.querySelector(".form__create--listing");
-   // const titleInput = document.querySelector("#titleInput");
-   // const dateInput = document.querySelector("#dataInput");
+   const errorCreatelisting = document.querySelector(".create__listing--error");
+
    formCreateListing.addEventListener("submit", async (e) => {
       e.preventDefault();
 
@@ -19,6 +20,7 @@ export async function createListingApiCall() {
       const filterMedia = media.filter(function (nomedia) {
          return nomedia;
       });
+      const currentTime = new Date().toISOString();
 
       const listingObj = {
          title: title,
@@ -28,12 +30,18 @@ export async function createListingApiCall() {
       };
 
       try {
-         await apiCall(createListingUrl, "POST", token, listingObj);
-         setTimeout(() => {
-            window.location.reload();
-         }, 500);
+         if (currentTime < timeString) {
+            await apiCall(createListingUrl, "POST", token, listingObj);
+            setTimeout(() => {
+               window.location.reload();
+            }, 500);
+         } else {
+            errorCreatelisting.innerHTML = displayErrorMessage(
+               "The date must be more than today's date "
+            );
+         }
       } catch (error) {
-         console.log(error);
+         errorCreatelisting.innerHTML = displayErrorMessage();
       }
    });
 }
