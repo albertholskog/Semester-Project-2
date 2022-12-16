@@ -37,7 +37,7 @@ export async function createListingApiCall() {
             }, 500);
          } else {
             errorCreatelisting.innerHTML = displayErrorMessage(
-               "The date must be more than today's date "
+               "Please choose a future date"
             );
          }
       } catch (error) {
