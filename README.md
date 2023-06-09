@@ -1,6 +1,6 @@
 # BID:IT
 
-Bid:it is my exam assignment for the first part of the second year
+This project is an auction website where users can add items to be bid on and bid on items listed by other users. The website allows registered users to manage their credits, create listings, and place bids on listings.
 
 ## Installation
 
